@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Webpack 配置详解 | Re_Star&#39;s Blog</title>
+    <meta name="description" content="一个搬轮子狂魔的学习笔记     (～￣(OO)￣)ブ">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.67c75054.css" as="style"><link rel="preload" href="/blog/assets/js/app.f33fc1c2.js" as="script"><link rel="preload" href="/blog/assets/js/9.a5b80000.js" as="script"><link rel="preload" href="/blog/assets/js/1.837fcb42.js" as="script"><link rel="preload" href="/blog/assets/js/18.738cd0ac.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.408e9f6a.js"><link rel="prefetch" href="/blog/assets/js/11.b570ac6e.js"><link rel="prefetch" href="/blog/assets/js/12.a8a0cc14.js"><link rel="prefetch" href="/blog/assets/js/13.73ed1bfd.js"><link rel="prefetch" href="/blog/assets/js/14.37854dd5.js"><link rel="prefetch" href="/blog/assets/js/15.ef541c89.js"><link rel="prefetch" href="/blog/assets/js/16.fc8a5ad5.js"><link rel="prefetch" href="/blog/assets/js/17.3a3aeb51.js"><link rel="prefetch" href="/blog/assets/js/19.72660e98.js"><link rel="prefetch" href="/blog/assets/js/20.ff44e9eb.js"><link rel="prefetch" href="/blog/assets/js/21.10968b33.js"><link rel="prefetch" href="/blog/assets/js/3.444d7a5e.js"><link rel="prefetch" href="/blog/assets/js/4.57efd3c1.js"><link rel="prefetch" href="/blog/assets/js/5.32d7196e.js"><link rel="prefetch" href="/blog/assets/js/6.231e2c3d.js"><link rel="prefetch" href="/blog/assets/js/7.f83d5320.js"><link rel="prefetch" href="/blog/assets/js/8.723737b1.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.67c75054.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><div class="loading"><div><div class="loader"></div> <div class="text">正在加载中~</div></div></div> <!----> <div class="bg"></div> <div class="nav-box nav"><div class="nav-name">Re_Star's Blog</div> <div class="search-box"><div class="search-key"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACwUlEQVRYR+3YX+jNdxzH8ccv2vKn1Jokf1qNJDf+TG4MuZBWW4sxf6L8SVlc4ELSciG7GClJZIXMuJCMxZ2yRKKIUGs0LqWmaLYL/3rP5+R0nHO+n+85P/1Ocm7P6/P6PD/v9+fz/rw/3y4d/uvqcD7vAdvN0Dsdwf6YjGH4GPdxD+fxX7uRq4xvJYKfYS1m4BruJrjB+BSj8Ru24Va7oGUAB+InDMJ6XMDTOgAfYiq24npazINWQXMBIzKnsAU/Z04W3huwGrPTgjKHvpblAH6UzOfjaukZXgFuxgTcKTu+CDD+P4MdOFHWvEr/A77EWDwr41ME+F3aT9+WMW2g/R2/YG8Zr2aA/fAXJqbyUca3nnYcTmI4XuSaNQP8CvOwINcsQ3cO3+NshvZ/STPAPTidVp3rV6RbhyGp9BRpCwFjlctxO8spTzQNq/BNnrx5BP/AmAbFONe/VjcC+zAl16BZiv/EeDzONcvQjUyAn2doC1McZWEFIpLd9YsrMEpXdtlqFsFduFjiastZxEZ8gE054qJTPB0rMSfXLEN3E0twKUNbmOJeCMOZqaXK9Wykm5s6nE+6q1DHRFGkv0aYt/Prixup/v1axqjoLg6vqIc7cayMcY12P6IDL71dcgCj3Yo2fiGutAAZXVBcmwPwqOz4HMDwjHfHkdSJHMycJJ4AuzEKDxFd9azubreqWXqnaypOd7w36rX8UUIm4YvUSR9Pde8Jjia4qIHPMxfZ0sM99tLilLbY/DFZnPihKdL/pv36Y82jKTQBGbAxPgsyN8WNFtwndSeRzgCIbvlyk2dnaA4l3aKcctMuYG6mqnUx52FEpJcVQfYEYOUGq0AubbbKngKsQB7AP+kg1eXsScBqyL+xph5hTwNWQ8ZnlO21kJ0AWIGMD1BvfCLpFMCG5+Q9YCuFsrZotuvxVsd3fIpfAk8Fcimtoa6SAAAAAElFTkSuQmCC" class="img"> <input autofocus="autofocus" placeholder="搜索" value=""></div> <!----></div> </div> <div class="all-box"><div class="content-box"><div class="phone-catalog"><div class="phone-box"><!----> <span></span> <!----></div></div> <div class="content"><div class="catalog-box"><div class="catalog-item-big"><div class="catalog-item"><div class="title">
+                        
+                    </div> <div class="article-time">
+                        4/5/2020, 8:31:00 PM
+                    </div></div></div></div> <div class="content__default"><h2 id="entry"><a href="#entry" class="header-anchor">#</a> entry</h2> <p>含义：打包的入口文件</p> <p>属性值</p> <ol><li><p><strong>string</strong> --&gt; './src/index.js'</p> <div class="language-txt extra-class"><pre class="language-text"><code>单入口
+打包形成一个chunk,输出一个bundle文件
+此时chunk的名称默认为main
+</code></pre></div></li> <li><p>array ---&gt;  ['./src/add.js'  , './src/index.js']</p> <div class="language-txt extra-class"><pre class="language-text"><code>多入口
+所有的入口文件最终只会形成一个chunk，输出出去只有一个bundle
+只有在HMR功能中让html热更新生效
+</code></pre></div></li> <li><p>object（文件名称：文件路径）</p> <div class="language-txt extra-class"><pre class="language-text"><code>多入口
+有几个入口文件就形成几个chunk，输出几个bundle文件
+此时chunk的名称是key
+特殊用法
+{
+	// 所有入口文件最终只会形成一个chunk,输出一个bundle
+	“index&quot;:['index.js','count.js'],
+	// 形成一个chunk,输出一个bundle
+	'add':'./src/add.js'
+}
+</code></pre></div></li></ol> <h2 id="output"><a href="#output" class="header-anchor">#</a> output</h2> <p>基本配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">...</span><span class="token punctuation">.</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    entry<span class="token operator">:</span><span class="token string">'./src/index.js'</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token comment">// 文件名称(指定名称+目录)</span>
+        filename<span class="token operator">:</span><span class="token string">'js/[name].js'</span><span class="token punctuation">,</span>
+        <span class="token comment">// 输出文件目录(将来所以输出资源的公共目录)</span>
+        path<span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 所有输出资源引用公共路径 --&gt; 路径的前面</span>
+        publicPath<span class="token operator">:</span><span class="token string">'/'</span><span class="token punctuation">,</span>
+        <span class="token comment">// 非chunk的名称</span>
+        chunkFilename<span class="token operator">:</span><span class="token string">'[name]_chunk.js'</span><span class="token punctuation">,</span>
+        library<span class="token operator">:</span><span class="token string">'[name]'</span><span class="token punctuation">,</span> <span class="token comment">// 整个库向外暴露的变量名</span>
+        libraryTarget<span class="token operator">:</span><span class="token string">'window'</span> <span class="token comment">// 变量名添加到哪一个上面 browser 添加到window</span>
+        libraryTarget<span class="token operator">:</span><span class="token string">'global'</span> <span class="token comment">// 变量名添加到哪一个上面 node 添加到global</span>
+        libraryTarget<span class="token operator">:</span><span class="token string">'commonjs'</span> <span class="token comment">// 以</span>
+    <span class="token punctuation">}</span>	
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="module"><a href="#module" class="header-anchor">#</a> module</h2> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token operator">:</span><span class="token punctuation">{</span>
+    rules<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token comment">//loader 配置</span>
+        <span class="token punctuation">{</span>
+            test<span class="token operator">:</span><span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 多个loader用use</span>
+            use<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span><span class="token string">'css-loader'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            test<span class="token operator">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 排除/node_modules/下的js文件</span>
+            exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 只检查src的js文件</span>
+            include<span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'src'</span><span class="token punctuation">)</span>
+            <span class="token comment">// 优先执行</span>
+            <span class="token comment">// enforce:'pre',</span>
+            <span class="token comment">// 延后执行</span>
+            <span class="token comment">// enforce:'post',</span>
+            <span class="token comment">// 多个loader用loader</span>
+            loader<span class="token operator">:</span><span class="token string">'eslint-loader'</span><span class="token punctuation">,</span>
+            <span class="token comment">// 给loader传递参数</span>
+            options<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// 以下配置只生效一个</span>
+            oneOf<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="resolve"><a href="#resolve" class="header-anchor">#</a> resolve</h2> <p>用于解析模块规则</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 解析模块的规则</span>
+    resolve<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token comment">// 配置解析模块路径别名</span>
+        <span class="token comment">// 可以简写引入模块的路径</span>
+        <span class="token comment">// 代码语义不明</span>
+        alias<span class="token operator">:</span><span class="token punctuation">{</span>
+            $css<span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'src/css'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>，
+        <span class="token comment">// 配置省略文件路径的后缀名</span>
+        extensions<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'js'</span><span class="token punctuation">,</span><span class="token string">'json'</span><span class="token punctuation">,</span><span class="token string">'css'</span><span class="token punctuation">,</span><span class="token string">'.jsx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    	<span class="token comment">// 告诉webpack解析模块去哪个目录找</span>
+    	modules<span class="token operator">:</span><span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'../../node_modules'</span><span class="token punctuation">)</span><span class="token string">'node_modules'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="devserver"><a href="#devserver" class="header-anchor">#</a> devServer</h2> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    devServer<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token comment">// 运行代码的目录</span>
+        contentBase<span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'build'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 监视contentBase目录下的所有文件，一旦文件变化就会reload</span>
+        watchContentBase<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 监视配置</span>
+        watchOptions<span class="token operator">:</span><span class="token punctuation">{</span>
+        	<span class="token comment">// 忽略文件</span>
+            ignored<span class="token operator">:</span><span class="token regex">/node_modules/</span>            
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">// 启动gzip压缩</span>
+        compress<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 端口号</span>
+        port<span class="token operator">:</span><span class="token number">5000</span><span class="token punctuation">,</span>
+        <span class="token comment">// 域名</span>
+        host<span class="token operator">:</span><span class="token string">'localhost'</span>
+        <span class="token comment">// 自动打开浏览器</span>
+        open<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 开启HMR功能</span>
+        hot<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 服务器日志相关配置信息</span>
+        clientLogLevel<span class="token operator">:</span><span class="token string">'none'</span>
+        <span class="token comment">// 除了一些基本的启动信息以外，其他内容都不要显示	</span>
+        quiet<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 如果出现错误，不要全屏提示</span>
+        overlay<span class="token operator">:</span><span class="token boolean">false</span>
+        <span class="token comment">// 服务器代理 --&gt; 解决开发环境跨域问题</span>
+        proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+        	<span class="token comment">// 一旦devServer(5000)服务器接收到/api/xxx的请求，就会把请求转发到端口号3000</span>
+        	<span class="token string">'/api'</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        		target<span class="token operator">:</span><span class="token string">'http://localhost:3000'</span><span class="token punctuation">,</span>
+        		<span class="token comment">// 发送请求时，请求路径重写 将 '^/api/xxx ---&gt; /xxx'</span>
+        		pathRewrite<span class="token operator">:</span><span class="token punctuation">{</span>
+        			<span class="token string">'^/api'</span><span class="token operator">:</span><span class="token string">''</span>
+    			<span class="token punctuation">}</span>
+    		<span class="token punctuation">}</span>
+    	<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="optimization"><a href="#optimization" class="header-anchor">#</a> optimization</h2> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    
+    optimization<span class="token operator">:</span><span class="token punctuation">{</span>
+        splitChunks <span class="token operator">:</span><span class="token punctuation">{</span>
+            chunks<span class="token operator">:</span><span class="token string">'all'</span><span class="token punctuation">,</span>
+            <span class="token comment">// 以下都是默认值</span>
+            minSize<span class="token operator">:</span><span class="token number">30</span><span class="token operator">*</span><span class="token number">1024</span><span class="token punctuation">,</span> <span class="token comment">// 分割的chunk最小为30kb</span>
+            maxSize<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 最大没有限制</span>
+            minChunks<span class="token operator">:</span><span class="token number">1</span> <span class="token comment">// 要提取的chunk最少次数为1次</span>
+            maxAsyncRequests<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token comment">// 按需加载时并行加载的文件最大数量</span>
+            minInitialRequest<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token comment">// 入口js文件最大并行请求数量</span>
+            automaticeNameDelimiter<span class="token operator">:</span><span class="token string">'~'</span> <span class="token comment">// 名称连接符</span>
+            name<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 可以使用命名规则</span>
+            <span class="token comment">// 分割chunk的组</span>
+            cacheGroups<span class="token operator">:</span><span class="token punctuation">{</span>
+            	<span class="token comment">// node_modules文件会被打包到vendors组的chunk中 --&gt; vendors~xxx.js</span>
+            	<span class="token comment">// 还要满足上面的公共规则</span>
+            	vendors<span class="token operator">:</span><span class="token punctuation">{</span>
+            		test<span class="token operator">:</span><span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+            		<span class="token comment">// 打包的优先级</span>
+            		priority<span class="token operator">:</span><span class="token operator">-</span><span class="token number">10</span>
+        		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        		<span class="token keyword">default</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                    <span class="token comment">// 要提取的chunk最少次数为2次</span>
+            		minChunks<span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                    <span class="token comment">// 打包的优先级</span>
+            		priority<span class="token operator">:</span><span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+                    <span class="token comment">// 如果当前要打包的模块，和之前已经被提取的模块是同一个，就会复用，而不是重新打包模块</span>
+                    reuseExistingChunk<span class="token operator">:</span><span class="token boolean">true</span>
+        		<span class="token punctuation">}</span>
+        	<span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        runtimeChunk<span class="token operator">:</span><span class="token punctuation">{</span>
+            <span class="token comment">// 将当前模块记录的引入其他模块哈希值打包成一个单独文件</span>
+            <span class="token function-variable function">name</span><span class="token operator">:</span><span class="token parameter">entrypoint</span><span class="token operator">=&gt;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">runtime-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>entrypoint<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+         minimizer<span class="token operator">:</span><span class="token punctuation">[</span>
+             <span class="token comment">// 配置js和Css的压缩方案</span>
+             <span class="token keyword">new</span> <span class="token class-name">TerserWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                 <span class="token comment">// 开启缓存</span>
+                 cache<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                 <span class="token comment">// 开启多进程打包</span>
+                 parallel<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                 <span class="token comment">// 开启sourceMap</span>
+                 sourceMap<span class="token operator">:</span><span class="token boolean">true</span>
+             <span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token punctuation">]</span>       
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="over">
+            完
+            <div class="block"></div></div> <div id="gitalk-container"></div></div> <div class="catalog "><!----> <div class="level1"></div> <a href="#entry" nofollow class="level2">entry</a><a href="#output" nofollow class="level2">output</a><a href="#module" nofollow class="level2">module</a><a href="#resolve" nofollow class="level2">resolve</a><a href="#devserver" nofollow class="level2">devServer</a><a href="#optimization" nofollow class="level2">optimization</a> <!----></div> <!----></div></div> <div class="foot"> Re_star</div></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.f33fc1c2.js" defer></script><script src="/blog/assets/js/9.a5b80000.js" defer></script><script src="/blog/assets/js/1.837fcb42.js" defer></script><script src="/blog/assets/js/18.738cd0ac.js" defer></script>
+  </body>
+</html>
