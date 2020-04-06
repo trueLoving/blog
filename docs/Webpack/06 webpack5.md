@@ -97,6 +97,4 @@ cache:{
 
 缓存将存储到node_modules/.cache/webpack
 
-#### 更多内容
-
-https://github.com/webpack/changelog-v5
+#### 更多内容 https://github.com/webpack/changelog-v5
