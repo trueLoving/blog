@@ -1,6 +1,5 @@
 ---
-title: JavaScript 遍历对象的方法
-showMessage: false
+title: 遍历对象的方法
 ---
 
 ## 概述

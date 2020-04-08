@@ -1,9 +1,8 @@
 ---
 title: JavaScript 小技巧-1
-showMessage: false
 ---
 
-#### 1. 数组去重
+## 1. 数组去重
 
 **情况描述**
 
@@ -55,7 +54,7 @@ const a3 = array.reduce((unique, item) => unique.includes(item) ? unique : [...u
 console.log(a1, a2, a3);
 ```
 
-#### 2. 对象解构
+## 2. 对象解构
 
 **情况描述**
 
@@ -85,7 +84,7 @@ const { name, age } = user;
 console.log(name, age);
 ```
 
-#### 3. 对象联合
+## 3. 对象联合
 
 **情况描述**
 
@@ -114,7 +113,7 @@ const obj = {...obj1,...obj2,...obj3};
 console.log(obj);
 ```
 
-#### 4. 创建私有变量
+## 4. 创建私有变量
 
 **情况描述**
 

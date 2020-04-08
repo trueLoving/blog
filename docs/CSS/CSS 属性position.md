@@ -1,6 +1,5 @@
 ---
-title: CSS Position属性
-showMessage: false
+title: Position属性
 ---
 
 ## 基本认识

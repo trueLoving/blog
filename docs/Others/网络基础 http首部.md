@@ -1,6 +1,5 @@
 ---
-title: 网络基础 http首部
-showMessage: false
+title: http首部
 ---
 
 ## 基本认识
@@ -52,7 +51,7 @@ http的首部是http报文的一个非常重要的组成部分，客户端和服
 8. Upgrade
 ```
 
-## 常见的首部字段（来自《图解HTTP》）
+## 常见的首部字段
 
 #### 通用首部字段
 

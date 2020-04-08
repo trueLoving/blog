@@ -1,6 +1,5 @@
 ---
-title: JavaScript Array常用方法的实现
-showMessage: false
+title: Array常用方法的实现
 ---
 
 ### 1. Array.prototype.indexOf
