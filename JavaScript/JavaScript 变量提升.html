@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>hoisting(变量提升) | Re_Star&#39;s Blog</title>
+    <meta name="description" content="一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.85df4339.css" as="style"><link rel="preload" href="/blog/assets/js/app.33951002.js" as="script"><link rel="preload" href="/blog/assets/js/9.10916384.js" as="script"><link rel="preload" href="/blog/assets/js/1.e6d2011c.js" as="script"><link rel="preload" href="/blog/assets/js/16.0638ab43.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.558c7afd.js"><link rel="prefetch" href="/blog/assets/js/11.fe9be93d.js"><link rel="prefetch" href="/blog/assets/js/12.307dd53c.js"><link rel="prefetch" href="/blog/assets/js/13.241c9fe4.js"><link rel="prefetch" href="/blog/assets/js/14.c609a489.js"><link rel="prefetch" href="/blog/assets/js/15.dc134f65.js"><link rel="prefetch" href="/blog/assets/js/17.1d084429.js"><link rel="prefetch" href="/blog/assets/js/18.eae034ab.js"><link rel="prefetch" href="/blog/assets/js/19.3a667c5c.js"><link rel="prefetch" href="/blog/assets/js/20.be4ca759.js"><link rel="prefetch" href="/blog/assets/js/21.6a9ee321.js"><link rel="prefetch" href="/blog/assets/js/22.75bfe2e5.js"><link rel="prefetch" href="/blog/assets/js/23.84496b35.js"><link rel="prefetch" href="/blog/assets/js/24.6054a4b5.js"><link rel="prefetch" href="/blog/assets/js/25.b84d6957.js"><link rel="prefetch" href="/blog/assets/js/26.9bf23307.js"><link rel="prefetch" href="/blog/assets/js/27.b5685fc9.js"><link rel="prefetch" href="/blog/assets/js/3.639b928f.js"><link rel="prefetch" href="/blog/assets/js/4.10d090b0.js"><link rel="prefetch" href="/blog/assets/js/5.65a63a23.js"><link rel="prefetch" href="/blog/assets/js/6.384030e7.js"><link rel="prefetch" href="/blog/assets/js/7.29634cc5.js"><link rel="prefetch" href="/blog/assets/js/8.f1a36c2c.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.85df4339.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><div class="loading"><div><div class="loader"></div> <div class="text">正在加载中~</div></div></div> <!----> <div class="bg"></div> <div class="nav-box nav"><div class="nav-name">Re_Star's Blog</div> <div class="search-box"><div class="search-key"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACwUlEQVRYR+3YX+jNdxzH8ccv2vKn1Jokf1qNJDf+TG4MuZBWW4sxf6L8SVlc4ELSciG7GClJZIXMuJCMxZ2yRKKIUGs0LqWmaLYL/3rP5+R0nHO+n+85P/1Ocm7P6/P6PD/v9+fz/rw/3y4d/uvqcD7vAdvN0Dsdwf6YjGH4GPdxD+fxX7uRq4xvJYKfYS1m4BruJrjB+BSj8Ru24Va7oGUAB+InDMJ6XMDTOgAfYiq24npazINWQXMBIzKnsAU/Z04W3huwGrPTgjKHvpblAH6UzOfjaukZXgFuxgTcKTu+CDD+P4MdOFHWvEr/A77EWDwr41ME+F3aT9+WMW2g/R2/YG8Zr2aA/fAXJqbyUca3nnYcTmI4XuSaNQP8CvOwINcsQ3cO3+NshvZ/STPAPTidVp3rV6RbhyGp9BRpCwFjlctxO8spTzQNq/BNnrx5BP/AmAbFONe/VjcC+zAl16BZiv/EeDzONcvQjUyAn2doC1McZWEFIpLd9YsrMEpXdtlqFsFduFjiastZxEZ8gE054qJTPB0rMSfXLEN3E0twKUNbmOJeCMOZqaXK9Wykm5s6nE+6q1DHRFGkv0aYt/Prixup/v1axqjoLg6vqIc7cayMcY12P6IDL71dcgCj3Yo2fiGutAAZXVBcmwPwqOz4HMDwjHfHkdSJHMycJJ4AuzEKDxFd9azubreqWXqnaypOd7w36rX8UUIm4YvUSR9Pde8Jjia4qIHPMxfZ0sM99tLilLbY/DFZnPihKdL/pv36Y82jKTQBGbAxPgsyN8WNFtwndSeRzgCIbvlyk2dnaA4l3aKcctMuYG6mqnUx52FEpJcVQfYEYOUGq0AubbbKngKsQB7AP+kg1eXsScBqyL+xph5hTwNWQ8ZnlO21kJ0AWIGMD1BvfCLpFMCG5+Q9YCuFsrZotuvxVsd3fIpfAk8Fcimtoa6SAAAAAElFTkSuQmCC" class="img"> <input autofocus="autofocus" placeholder="搜索" value=""></div> <!----></div> </div> <div class="all-box"><div class="content-box"><div class="phone-catalog"><div class="phone-box"><!----> <span></span> <!----></div></div> <div class="content"><div class="catalog-box"><div class="catalog-item-big"><div class="catalog-item"><div class="title">
+                        
+                    </div> <div class="article-time">
+                        4/15/2020, 2:30:45 PM
+                    </div></div></div></div> <div class="content__default"><h2 id="基本认识"><a href="#基本认识" class="header-anchor">#</a> 基本认识</h2> <p><code>hoisting(变量提升)</code>，所描述的是JavaScript代码在运行中所产生的一种现象。</p> <p>用简单的话来讲就是JavaScript引擎在运行JavaScript代码时会<code>先处理声明变量的代码，再从第一行执行代码</code></p> <p>hoisting产生的原因与JavaScript引擎解析JavaScript代码的机制有关，因此只有理解JavaScript引擎解析代码的机制才能明白hoisting</p> <h2 id="引擎解析代码机制"><a href="#引擎解析代码机制" class="header-anchor">#</a> 引擎解析代码机制</h2> <p>引擎解析代码主要分为以下两步</p> <ol><li>预处理</li> <li>执行代码</li></ol> <h4 id="预处理"><a href="#预处理" class="header-anchor">#</a> 预处理</h4> <p>在这个阶段，引擎会通览代码，并遇到以下关键字（主要是声明变量的关键字）时会进行一些相关处理</p> <p><strong>主要关键字如下</strong></p> <ol><li>let</li> <li>const</li> <li>class</li> <li>var</li> <li>function</li></ol> <p>当遇到这些关键字时，引擎会为每一个声明的变量在内存中创建一个独一无二的空间，并且会做一些相关处理。</p> <p>例如当遇到用var声明的变量时会初始化定义为<code>undefined</code>,</p> <p>而遇到let,const or class声明的变量时会标记该变量为<code>uninitialize</code>，且不可使用</p> <p>而遇到函数定义时会先进行函数的定义</p> <p><strong>测试代码如下</strong></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// throw an error:Cannot access 'letA' before initialization   </span>
+<span class="token comment">// console.log(letA);</span>
+<span class="token keyword">let</span> letA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// throw an error:Cannot access 'constA' before initialization  </span>
+<span class="token comment">// console.log(constA);</span>
+<span class="token keyword">const</span> constA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// throw an error:Cannot access 'classA' before initialization  </span>
+<span class="token comment">// console.log(classA);</span>
+<span class="token keyword">class</span> <span class="token class-name">classA</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>varA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> varA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// fA()</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello fA&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><div class="language-txt line-numbers-mode"><pre class="language-text"><code>在这里提一下函数声明的三种方式
+1. new Function(例如var f = new Function(...args))
+2. 函数声明(例如f(){})
+3. 函数表达式(例如var f = function(){})
+其中，只有第二种方法声明的函数是支持hoisiting,其他声明是不支持hoisting
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="执行代码"><a href="#执行代码" class="header-anchor">#</a> 执行代码</h4> <p>当JavaSript引擎执行完成第一步时，就开始进行第二步操作</p> <p>从代码的第一行开始执行，按照代码执行流的顺序执行，遇到函数就跳入到函数执行，遇到异步代码就按照异步代码机制执行</p> <h2 id="var-hoisting-vs-function-hoisting"><a href="#var-hoisting-vs-function-hoisting" class="header-anchor">#</a> var hoisting vs function hoisting</h2> <p>简而言之，函数提升大于变量提升</p> <p>什么意思，以下面的代码作为例子说明</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>
+<span class="token comment">// ƒ a(){ // 2</span>
+<span class="token comment">//   console.log(&quot;hello a&quot;);</span>
+<span class="token comment">// }</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// 2</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>在这里，我们分别使用var和function定义了一个同名的变量，而当我们打印该变量时发现打印出来的结果是function定义的变量</p> <p>这个就说明了一个现象function定义变量的执行比var定义变量的执行要高,即<code>函数提升大于变量提升</code></p> <h2 id="let-const-hoisting"><a href="#let-const-hoisting" class="header-anchor">#</a> let&amp;const hoisting</h2> <p>let/const/class声明的变量也有hoisting现象.<br>
+只是与var/function处理的措施不同，let/const/class声明的变量只是被引擎处于标记为<code>uninitialize</code>，并没有为那些变量赋初始值。<br>
+在变量被声明和变量被真正初始化之间的这段时间被称为<code>temporal dead zone(临时死区)</code>。如果我们尝试在这段时间去访问这些变量，我们会得到一个变量引用错误的异常报错
+犹如下面例子</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// throw an error:Cannot access 'a' before initialization</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>因为变量a没有被初始化赋值，因此在我们访问该变量时会报异常错误说变量a没有被定义。</p></div> <div class="over">
+            完
+            <div class="block"></div></div> <div id="gitalk-container"></div></div> <div class="catalog "><!----> <div class="level1"></div> <a href="#基本认识" nofollow class="level2">基本认识</a><a href="#引擎解析代码机制" nofollow class="level2">引擎解析代码机制</a><a href="#var-hoisting-vs-function-hoisting" nofollow class="level2">var hoisting vs function hoisting</a><a href="#let-const-hoisting" nofollow class="level2">let&amp;const hoisting</a> <!----></div> <!----></div></div> <div class="foot"> Re_star</div></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.33951002.js" defer></script><script src="/blog/assets/js/9.10916384.js" defer></script><script src="/blog/assets/js/1.e6d2011c.js" defer></script><script src="/blog/assets/js/16.0638ab43.js" defer></script>
+  </body>
+</html>
