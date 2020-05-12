@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>事件冒泡&amp;事件委托 | Re_Star&#39;s Blog</title>
+    <meta name="description" content="一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.85df4339.css" as="style"><link rel="preload" href="/blog/assets/js/app.98c9dee8.js" as="script"><link rel="preload" href="/blog/assets/js/9.10916384.js" as="script"><link rel="preload" href="/blog/assets/js/1.e28a081d.js" as="script"><link rel="preload" href="/blog/assets/js/22.de4de03a.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.7e753ef2.js"><link rel="prefetch" href="/blog/assets/js/11.ae32898d.js"><link rel="prefetch" href="/blog/assets/js/12.c27b0c43.js"><link rel="prefetch" href="/blog/assets/js/13.ed53c5b1.js"><link rel="prefetch" href="/blog/assets/js/14.3e68fd8e.js"><link rel="prefetch" href="/blog/assets/js/15.60afccea.js"><link rel="prefetch" href="/blog/assets/js/16.1ece9bed.js"><link rel="prefetch" href="/blog/assets/js/17.57bde4b0.js"><link rel="prefetch" href="/blog/assets/js/18.fbe51f86.js"><link rel="prefetch" href="/blog/assets/js/19.401f4df7.js"><link rel="prefetch" href="/blog/assets/js/20.a3785c32.js"><link rel="prefetch" href="/blog/assets/js/21.c528e41e.js"><link rel="prefetch" href="/blog/assets/js/23.0baed186.js"><link rel="prefetch" href="/blog/assets/js/24.5abcddde.js"><link rel="prefetch" href="/blog/assets/js/25.5b568eb9.js"><link rel="prefetch" href="/blog/assets/js/26.97e51040.js"><link rel="prefetch" href="/blog/assets/js/27.b887f668.js"><link rel="prefetch" href="/blog/assets/js/28.495726a5.js"><link rel="prefetch" href="/blog/assets/js/29.fc4cadce.js"><link rel="prefetch" href="/blog/assets/js/3.21621b26.js"><link rel="prefetch" href="/blog/assets/js/30.bd62d84e.js"><link rel="prefetch" href="/blog/assets/js/31.a9efde74.js"><link rel="prefetch" href="/blog/assets/js/32.2f434955.js"><link rel="prefetch" href="/blog/assets/js/33.89e1ee24.js"><link rel="prefetch" href="/blog/assets/js/34.6eba3cfc.js"><link rel="prefetch" href="/blog/assets/js/35.48450108.js"><link rel="prefetch" href="/blog/assets/js/36.bc64ef8a.js"><link rel="prefetch" href="/blog/assets/js/37.8270c5ba.js"><link rel="prefetch" href="/blog/assets/js/38.092ab518.js"><link rel="prefetch" href="/blog/assets/js/39.2c8a4eec.js"><link rel="prefetch" href="/blog/assets/js/4.7c3ae36c.js"><link rel="prefetch" href="/blog/assets/js/40.63c161c6.js"><link rel="prefetch" href="/blog/assets/js/41.b2e8a119.js"><link rel="prefetch" href="/blog/assets/js/42.7b575ad6.js"><link rel="prefetch" href="/blog/assets/js/43.ce1b5906.js"><link rel="prefetch" href="/blog/assets/js/5.422ebc18.js"><link rel="prefetch" href="/blog/assets/js/6.de2dc6d6.js"><link rel="prefetch" href="/blog/assets/js/7.4273a40f.js"><link rel="prefetch" href="/blog/assets/js/8.cd81725f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.85df4339.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><div class="loading"><div><div class="loader"></div> <div class="text">正在加载中~</div></div></div> <!----> <div class="bg"></div> <div class="nav-box nav"><div class="nav-name">Re_Star's Blog</div> <div class="search-box"><div class="search-key"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACwUlEQVRYR+3YX+jNdxzH8ccv2vKn1Jokf1qNJDf+TG4MuZBWW4sxf6L8SVlc4ELSciG7GClJZIXMuJCMxZ2yRKKIUGs0LqWmaLYL/3rP5+R0nHO+n+85P/1Ocm7P6/P6PD/v9+fz/rw/3y4d/uvqcD7vAdvN0Dsdwf6YjGH4GPdxD+fxX7uRq4xvJYKfYS1m4BruJrjB+BSj8Ru24Va7oGUAB+InDMJ6XMDTOgAfYiq24npazINWQXMBIzKnsAU/Z04W3huwGrPTgjKHvpblAH6UzOfjaukZXgFuxgTcKTu+CDD+P4MdOFHWvEr/A77EWDwr41ME+F3aT9+WMW2g/R2/YG8Zr2aA/fAXJqbyUca3nnYcTmI4XuSaNQP8CvOwINcsQ3cO3+NshvZ/STPAPTidVp3rV6RbhyGp9BRpCwFjlctxO8spTzQNq/BNnrx5BP/AmAbFONe/VjcC+zAl16BZiv/EeDzONcvQjUyAn2doC1McZWEFIpLd9YsrMEpXdtlqFsFduFjiastZxEZ8gE054qJTPB0rMSfXLEN3E0twKUNbmOJeCMOZqaXK9Wykm5s6nE+6q1DHRFGkv0aYt/Prixup/v1axqjoLg6vqIc7cayMcY12P6IDL71dcgCj3Yo2fiGutAAZXVBcmwPwqOz4HMDwjHfHkdSJHMycJJ4AuzEKDxFd9azubreqWXqnaypOd7w36rX8UUIm4YvUSR9Pde8Jjia4qIHPMxfZ0sM99tLilLbY/DFZnPihKdL/pv36Y82jKTQBGbAxPgsyN8WNFtwndSeRzgCIbvlyk2dnaA4l3aKcctMuYG6mqnUx52FEpJcVQfYEYOUGq0AubbbKngKsQB7AP+kg1eXsScBqyL+xph5hTwNWQ8ZnlO21kJ0AWIGMD1BvfCLpFMCG5+Q9YCuFsrZotuvxVsd3fIpfAk8Fcimtoa6SAAAAAElFTkSuQmCC" class="img"> <input autofocus="autofocus" placeholder="搜索" value=""></div> <!----></div> </div> <div class="all-box"><div class="content-box"><div class="phone-catalog"><div class="phone-box"><!----> <span></span> <!----></div></div> <div class="content"><div class="catalog-box"><div class="catalog-item-big"><div class="catalog-item"><div class="title">
+                        
+                    </div> <div class="article-time">
+                        5/12/2020, 9:15:29 AM
+                    </div></div></div></div> <div class="content__default"><h2 id="认识事件冒泡"><a href="#认识事件冒泡" class="header-anchor">#</a> 认识事件冒泡</h2> <p>在我看来，事件冒泡，说的简单一点就是当我们触发一个元素的事件时，会触发其父元素及祖先元素的所有相同类型的事件</p> <p>我们要知道事件冒泡有以下特性</p> <ol><li>事件冒泡是默认开启的，但我们可以通过js代码来控制事件冒泡</li></ol> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>当触发我们的事件函数时，事件函数其实会接收到一个event对象，该对象上的stopPropagation()可以阻止事件冒泡。
+当我们在我们的事件函数中执行event.stopPropagation()方法，那么事件冒泡到此就结束了
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="2"><li>并不是所有类型的事件都支持事件冒泡</li></ol> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>不支持事件冒泡的事件类型如下：
+   focus
+   blur
+   mouseenter
+   mouseleave
+   load
+   unload
+   resize
+其他我们平常遇到的事件都支持冒泡
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ol start="3"><li>事件冒泡只会触发相同类型的事件函数</li></ol> <h2 id="举个例子"><a href="#举个例子" class="header-anchor">#</a> 举个例子</h2> <p>概念太过空泛，接下来用实际例子说明</p> <p>代码:</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>事件冒泡<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.outer1,
+        .outer2</span> <span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">.outer1</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">.outer2</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> yellowgreen<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">.inner1,
+        .inner2</span> <span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">.inner1</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">.inner2</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>bodyF()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outer1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outer1F()<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onchange</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outer1CF()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inner1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inner1F()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outer2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outer1F()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inner2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inner2F(event)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">function</span> <span class="token function">bodyF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;body is clicked&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">function</span> <span class="token function">outer1CF</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;outer1 change event has been triggered&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">function</span> <span class="token function">outer1F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;outer1 is clicked&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">function</span> <span class="token function">inner1F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;inner1 is clicked&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">function</span> <span class="token function">outer2F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;outer2 is clicked&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">function</span> <span class="token function">inner2F</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 阻止事件冒泡</span>
+            event<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;inner2 is clicked&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br></div></div><p>效果图:</p> <img src="/blog/JavaScript/JavaScript 事件冒泡01.png" alt="mixureSecure"> <p>ok，现在我们开始进行我们的实验</p> <p>首先，我们点击<strong>蓝色的div</strong>，浏览器的执行效果如下</p> <img src="/blog/JavaScript/JavaScript 事件冒泡02.png" alt="mixureSecure"> <p><strong>原因分析</strong></p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>1. 首先，当我们点击蓝色的div时，会执行蓝色div所绑定的点击事件
+2. 然后，开始事件冒泡，朝着蓝色div的父元素及祖先元素冒泡，如果其父元素及祖先元素也绑定相同类型的事件，则执行
+
+在这里，蓝色的div的父元素是红色的div,其祖先元素就只有body元素
+首先，执行蓝色div的点击事件函数
+然后，再执行其父元素红色div的点击事件函数
+最后，执行其祖先元素body的点击事件函数
+
+因此，浏览器的执行效果如上图所示
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>接下来，我们点击粉色的div，浏览器的执行效果如下</p> <img src="/blog/JavaScript/JavaScript 事件冒泡03.png" alt="mixureSecure"> <p><strong>原因分析</strong></p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>1. 首先，我们点击粉色的div时，会触发粉色div的点击事件函数
+2. 由于粉色div的点击事件函数中有event.stopPropagation()执行，则会使得事件冒泡到此就结束了
+
+因此，浏览器的执行效果如上图所示
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>现在，我们做以下操作</p> <ol><li>讲粉色div中点击fen事件函数的event.stopPropagation()方法放到绿色的div的点击事件函数；</li> <li>移除粉红色div的点击事件函数的event.stopPropagation()代码语句</li> <li>然后我们再次点击粉色的div</li></ol> <p>浏览器的执行效果如下图所示</p> <img src="/blog/JavaScript/JavaScript 事件冒泡04.png" alt="mixureSecure"> <p><strong>原因分析</strong></p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>1. 首先，点击了粉色的div,则触发粉色div的点击事件函数
+2. 因为粉色div的点击事件函数并没有阻止事件冒泡，则事件冒泡到粉色div的父元素，绿色的div
+3. 然后触发绿色的div点击事件函数
+4. 因为绿色的div点击事件函数有执行event.stopPropagation()，即停止事件冒泡
+
+因此，点击粉色的div,就执行了粉色div的点击事件和绿色div的点击事件
+浏览器的执行效果如上图所示
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>点击<strong>红色div</strong>和<strong>绿色div</strong>，最后会触发它们自身和其父元素和祖先元素的点击事件函数。</p> <p>原理类型，这里就不作过多阐述</p> <h2 id="事件委托"><a href="#事件委托" class="header-anchor">#</a> 事件委托</h2> <p>我们根据事件冒泡原理实现一种叫做“事件委托”的机制</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>为什么要提出“事件委托”这种机制
+原因
+1. 当我们为一个元素注册事件时是需要付出内存的代价的，当我们为元素的事件过多时会影响到页面的性能
+2. 代码编写的方便，如果按照我们之前原来的写法，我们需要为每一个元素一个一个注册事件，这样太麻烦了。我们如果使用“事件委托”机制就可以为一系列标签注册事件，减少我们代码的编写
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>这里，用一个例子说明“事件委托”的使用</p> <p>示例代码</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ie=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleClick(event)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>this is li one<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>this is li two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>this is li three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">function</span> <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>srcElement<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>现在，我想实现点击相应的li就弹出相应li的内容</p> <p>如果，按照原来的做法，就需要在每一个li元素注册点击事件</p> <p>然后，我们如果使用“事件委托”机制，只要在它们的共同的父元素注册点击事件，统一处理就可以了。这样做就可以大量减少代码的编写</p> <p>被触发的事件函数可以接收到一个关于当前被触发事件标签的相关信息event对象，我们可以根据这个知道真实被触发事件的标签对象</p> <p>在这里，我们为这3个li的公共父元素ul注册了一个点击事件，并且接收到一个参数event</p> <div class="language-txt line-numbers-mode"><pre class="language-text"><code>event对象上的srcElement的值是指被触发事件的标签（在这里是被点击的li标签）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后，我们点击li标签就会显示相应的内容，效果如下所示</p> <p>点击第1个li</p> <img src="/blog/JavaScript/JavaScript 事件冒泡05.png" alt="mixureSecure"> <p>点击第2个li</p> <img src="/blog/JavaScript/JavaScript 事件冒泡06.png" alt="mixureSecure"> <p>点击第3个li
+<img src="/blog/JavaScript/JavaScript 事件冒泡07.png" alt="mixureSecure"></p></div> <div class="over">
+            完
+            <div class="block"></div></div> <div id="gitalk-container"></div></div> <div class="catalog "><!----> <div class="level1"></div> <a href="#认识事件冒泡" nofollow class="level2">认识事件冒泡</a><a href="#举个例子" nofollow class="level2">举个例子</a><a href="#事件委托" nofollow class="level2">事件委托</a> <!----></div> <!----></div></div> <div class="foot"> Re_star</div></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.98c9dee8.js" defer></script><script src="/blog/assets/js/9.10916384.js" defer></script><script src="/blog/assets/js/1.e28a081d.js" defer></script><script src="/blog/assets/js/22.de4de03a.js" defer></script>
+  </body>
+</html>
