@@ -49,44 +49,44 @@ console.log(this)
 1. 简单调用
 
 ```js
-   'use strict'
-   // 函数体
-   function f(){
-       console.log(this);
-   }
+'use strict'
+// 函数体
+function f(){
+    console.log(this);
+}
    
-   // 在浏览器中，打印window对象
-   // 在Nodejs中，打印global对象
-   // 在严格模式下，则输出undefined
-   // 在严格模式下，如果this没有被执行环境（即函数没有被对象调用，那this则会为undefined）
-   f();
+// 在浏览器中，打印window对象
+// 在Nodejs中，打印global对象
+// 在严格模式下，则输出undefined
+// 在严格模式下，如果this没有被执行环境（即函数没有被对象调用，那this则会为undefined）
+f();
 ```
 
 2. 使用call或者apply函数运行时内部的this值
 
 ```js
-   // obj对象
-   var obj = {
-       a:"hello obj"
-   }
+// obj对象
+var obj = {
+    a:"hello obj"
+}
    
-   // 函数f
-   function f(){
-       console.log(this);
-   }
+// 函数f
+function f(){
+    console.log(this);
+}
    
-   // 函数执行时不指定this的值
-   // 因为是在非严格模式下,所以打印window对象
-   f();
+// 函数执行时不指定this的值
+// 因为是在非严格模式下,所以打印window对象
+f();
    
-   //函数执行时指定this的值为obj
-   // 打印obj对象
-   f.call(obj);
+//函数执行时指定this的值为obj
+// 打印obj对象
+f.call(obj);
    
-   //函数执行时指定this的值为obj
-   // 打印obj对象
-   f.apply(obj);
- ```
+//函数执行时指定this的值为obj
+// 打印obj对象
+f.apply(obj);
+```
 
 注意：如果给apply或者call所传的this的值不是一个对象，则JavaScript会尝试使用内部的`ToObject`操作讲其转换为对象，即如果给call传递的参数为数字7，则7会强制转换成Number对象7
 
@@ -94,7 +94,6 @@ console.log(this)
 var obj = 7;
    
 function f(){
-   
     // 打印[Object Number]
     // 一般对于要获取一个变量的类型，我们可以使用typeof函数来获取变量的类型
     // 但是typeof所获取的变量类型还不够具体，例如如果获取数组类型ttypeof只能获取为对象
@@ -161,50 +160,50 @@ console.log(h===g);
 **demo1**
 
 ```js
-      var outerObj = {
+var outerObj = {
       
-          // 返回outer对象
-          inner: function () {
-              return this
-          },
+    // 返回outer对象
+    inner: function () {
+        return this
+    },
       
-          // 返回window对象
-          // inner:()=>this
+    // 返回window对象
+    // inner:()=>this
           
-          this
-      }
+    this
+}
       
-      console.log(outerObj.inner());
-      // 因为箭头函数会使箭头函数在执行过程中,其内部this的值与外部执行过程中this的值相同
+console.log(outerObj.inner());
+// 因为箭头函数会使箭头函数在执行过程中,其内部this的值与外部执行过程中this的值相同
 ```
 
 **demo2**
 
 ```js
-      // 对象obj
-      var obj = {
-          bar: function () {
-              var x = () => this;
-              return x;
-          }
-      };
+// 对象obj
+var obj = {
+    bar: function () {
+        var x = () => this;
+        return x;
+    }
+};
       
-      // fn1 = x = () => this;
-      var fn1 = obj.bar();
-      // 可以打印看看fn1是什么东西
-      // console.log(fn1);
-      // true
-      console.log(fn1()===obj);
+// fn1 = x = () => this;
+var fn1 = obj.bar();
+// 可以打印看看fn1是什么东西
+// console.log(fn1);
+// true
+console.log(fn1()===obj);
       
-      // fn2 = function(){
-      //     var x = () => this;
-      //     return x;
-      // }
-      var fn2 = obj.bar;
-      // 可以打印看看fn2是什么东西
-      // console.log(fn2);
-      // true
-      console.log(fn2()()===window);
+// fn2 = function(){
+//     var x = () => this;
+//     return x;
+// }
+var fn2 = obj.bar;
+// 可以打印看看fn2是什么东西
+// console.log(fn2);
+// true
+console.log(fn2()()===window);
 ```
 
 5. 函数作为对象里的方法被调用
