@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTTP的通信过程 | Re_Star&#39;s Blog</title>
+    <meta name="description" content="一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ">
+    <meta name="generator" content="VuePress 1.4.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.85df4339.css" as="style"><link rel="preload" href="/blog/assets/js/app.d00a89e3.js" as="script"><link rel="preload" href="/blog/assets/js/9.10916384.js" as="script"><link rel="preload" href="/blog/assets/js/1.e28a081d.js" as="script"><link rel="preload" href="/blog/assets/js/50.7f82b6d3.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.f6ef738b.js"><link rel="prefetch" href="/blog/assets/js/11.ae32898d.js"><link rel="prefetch" href="/blog/assets/js/12.eed26ac6.js"><link rel="prefetch" href="/blog/assets/js/13.18491f23.js"><link rel="prefetch" href="/blog/assets/js/14.36d5a908.js"><link rel="prefetch" href="/blog/assets/js/15.60afccea.js"><link rel="prefetch" href="/blog/assets/js/16.0cd13e50.js"><link rel="prefetch" href="/blog/assets/js/17.916edd37.js"><link rel="prefetch" href="/blog/assets/js/18.e85f0dbc.js"><link rel="prefetch" href="/blog/assets/js/19.d4e2aab2.js"><link rel="prefetch" href="/blog/assets/js/20.57fd7cd9.js"><link rel="prefetch" href="/blog/assets/js/21.72cade55.js"><link rel="prefetch" href="/blog/assets/js/22.2d120b87.js"><link rel="prefetch" href="/blog/assets/js/23.3659a1b0.js"><link rel="prefetch" href="/blog/assets/js/24.725af48d.js"><link rel="prefetch" href="/blog/assets/js/25.aceae916.js"><link rel="prefetch" href="/blog/assets/js/26.df4e9b25.js"><link rel="prefetch" href="/blog/assets/js/27.39bbb67f.js"><link rel="prefetch" href="/blog/assets/js/28.e9462944.js"><link rel="prefetch" href="/blog/assets/js/29.6be6868a.js"><link rel="prefetch" href="/blog/assets/js/3.21621b26.js"><link rel="prefetch" href="/blog/assets/js/30.70668367.js"><link rel="prefetch" href="/blog/assets/js/31.4e2c4dee.js"><link rel="prefetch" href="/blog/assets/js/32.68fefcd1.js"><link rel="prefetch" href="/blog/assets/js/33.1852421b.js"><link rel="prefetch" href="/blog/assets/js/34.12981d9e.js"><link rel="prefetch" href="/blog/assets/js/35.a7c0a319.js"><link rel="prefetch" href="/blog/assets/js/36.086a2bb0.js"><link rel="prefetch" href="/blog/assets/js/37.56f5f051.js"><link rel="prefetch" href="/blog/assets/js/38.f0255f29.js"><link rel="prefetch" href="/blog/assets/js/39.efbc24a4.js"><link rel="prefetch" href="/blog/assets/js/4.7c3ae36c.js"><link rel="prefetch" href="/blog/assets/js/40.4ae3e786.js"><link rel="prefetch" href="/blog/assets/js/41.fa2f6fa5.js"><link rel="prefetch" href="/blog/assets/js/42.abacbf54.js"><link rel="prefetch" href="/blog/assets/js/43.002594bf.js"><link rel="prefetch" href="/blog/assets/js/44.94b111d0.js"><link rel="prefetch" href="/blog/assets/js/45.388a0df3.js"><link rel="prefetch" href="/blog/assets/js/46.c725991a.js"><link rel="prefetch" href="/blog/assets/js/47.2839a392.js"><link rel="prefetch" href="/blog/assets/js/48.af5e3c6b.js"><link rel="prefetch" href="/blog/assets/js/49.4f755b9d.js"><link rel="prefetch" href="/blog/assets/js/5.422ebc18.js"><link rel="prefetch" href="/blog/assets/js/51.e33e4711.js"><link rel="prefetch" href="/blog/assets/js/52.e13e79c9.js"><link rel="prefetch" href="/blog/assets/js/53.744a9b2a.js"><link rel="prefetch" href="/blog/assets/js/54.88b813b4.js"><link rel="prefetch" href="/blog/assets/js/6.de2dc6d6.js"><link rel="prefetch" href="/blog/assets/js/7.e7ec3aa8.js"><link rel="prefetch" href="/blog/assets/js/8.c11074e9.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.85df4339.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><div class="loading"><div><div class="loader"></div> <div class="text">正在加载中~</div></div></div> <!----> <div class="bg"></div> <div class="nav-box nav"><div class="nav-name">Re_Star's Blog</div> <div class="search-box"><div class="search-key"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACwUlEQVRYR+3YX+jNdxzH8ccv2vKn1Jokf1qNJDf+TG4MuZBWW4sxf6L8SVlc4ELSciG7GClJZIXMuJCMxZ2yRKKIUGs0LqWmaLYL/3rP5+R0nHO+n+85P/1Ocm7P6/P6PD/v9+fz/rw/3y4d/uvqcD7vAdvN0Dsdwf6YjGH4GPdxD+fxX7uRq4xvJYKfYS1m4BruJrjB+BSj8Ru24Va7oGUAB+InDMJ6XMDTOgAfYiq24npazINWQXMBIzKnsAU/Z04W3huwGrPTgjKHvpblAH6UzOfjaukZXgFuxgTcKTu+CDD+P4MdOFHWvEr/A77EWDwr41ME+F3aT9+WMW2g/R2/YG8Zr2aA/fAXJqbyUca3nnYcTmI4XuSaNQP8CvOwINcsQ3cO3+NshvZ/STPAPTidVp3rV6RbhyGp9BRpCwFjlctxO8spTzQNq/BNnrx5BP/AmAbFONe/VjcC+zAl16BZiv/EeDzONcvQjUyAn2doC1McZWEFIpLd9YsrMEpXdtlqFsFduFjiastZxEZ8gE054qJTPB0rMSfXLEN3E0twKUNbmOJeCMOZqaXK9Wykm5s6nE+6q1DHRFGkv0aYt/Prixup/v1axqjoLg6vqIc7cayMcY12P6IDL71dcgCj3Yo2fiGutAAZXVBcmwPwqOz4HMDwjHfHkdSJHMycJJ4AuzEKDxFd9azubreqWXqnaypOd7w36rX8UUIm4YvUSR9Pde8Jjia4qIHPMxfZ0sM99tLilLbY/DFZnPihKdL/pv36Y82jKTQBGbAxPgsyN8WNFtwndSeRzgCIbvlyk2dnaA4l3aKcctMuYG6mqnUx52FEpJcVQfYEYOUGq0AubbbKngKsQB7AP+kg1eXsScBqyL+xph5hTwNWQ8ZnlO21kJ0AWIGMD1BvfCLpFMCG5+Q9YCuFsrZotuvxVsd3fIpfAk8Fcimtoa6SAAAAAElFTkSuQmCC" class="img"> <input autofocus="autofocus" placeholder="搜索" value=""></div> <!----></div> </div> <div class="all-box"><div class="content-box"><div class="phone-catalog"><div class="phone-box"><!----> <span></span> <!----></div></div> <div class="content"><div class="catalog-box"><div class="catalog-item-big"><div class="catalog-item"><div class="title">
+                        
+                    </div> <div class="article-time">
+                        5/18/2020, 2:02:18 PM
+                    </div></div></div></div> <div class="content__default"><h2 id="基本介绍"><a href="#基本介绍" class="header-anchor">#</a> 基本介绍</h2> <img src="/blog/网络基础/网络基础 HTTP的通信过程01.png" alt="mixureSecure"> <p>最简单的HTTP通信过程是发生在<strong>客户端</strong>与<strong>服务端</strong>之间的。</p> <p>客户端发送请求，而服务端响应请求，如上图所示。</p> <p>而客户端发送请求的最重要目的是为了获取服务端上的资源。然而客户端为了获取自己想要的资源就必须告诉服务端资源的位置(URI)。只有告诉服务端资源的位置服务端才能返回给客户端其想要的资源。</p> <p>所以，客户端不是发送一个请求就可以获取到资源，在发送请求的时候，请求要携带一些数据，例如资源的位置URI，请求服务端的位置等等。</p> <p>而这些数据就是报文。</p> <p>报文是客户端和服务端进行数据交互的数据载体</p> <h2 id="报文的数据结构"><a href="#报文的数据结构" class="header-anchor">#</a> 报文的数据结构</h2> <p>用于HTTP协议交互的信息被称为HTTP报文</p> <p>HTTP报文本身是由多行数据构成的<strong>字符串文本</strong></p> <p>而HTTP报文可以分为两个部分</p> <ol><li>报文首部</li> <li>报文主体</li></ol> <p>而在这里，根据HTTP报文的使用目的可以分为以下两种</p> <ol><li>请求报文（客户端发送请求的HTTP报文）</li> <li>响应报文（服务端响应请求的HTTP报文）</li></ol> <p>请求报文的结构如下图所示</p> <img src="/blog/网络基础/网络基础 HTTP的通信过程02.png" alt="mixureSecure"> <p>而响应报文的结构如下图所示</p> <img src="/blog/网络基础/网络基础 HTTP的通信过程03.png" alt="mixureSecure"> <div class="language- line-numbers-mode"><pre class="language-text"><code>注：
+首部字段：包含表示请求和响应的各种条件和数学的各类首部。
+一般有4种首部：
+1. 通用首部
+2. 请求首部
+3. 响应首部
+4. 实体首部
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="传输过程"><a href="#传输过程" class="header-anchor">#</a> 传输过程</h2> <p>HTTP的通信过程中，为了提高传输过程中传输的稳定性和高效性，有以下两种手段来实现传输速度的提升</p> <ol><li>压缩传输（内容编码）</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>压缩传输是指将传输内容进行压缩，降低内容的字节大小,从而实现传输速率的提升
+由发送方将内容进行编码压缩，然后由接收端根据发送方发送报文的请求头对内容进行解码
+常见的压缩方法如下
+1. gzip
+2. compress
+3. deflate
+4. identity
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ol start="2"><li>分块压缩传输</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>分块压缩传输是指发送方将要传输的内容进行分块，然后每一块进行压缩，然后一块一块发送给接收端。
+接收端根据发送方发过来的HTTP报文判断该块是属于整体内容的哪一部分，并且判断此时发送方所要发送的内容是否已经结束。
+接收端在介绍块数据的同时，会同时将块数据进行解码，无需等到发送方将数据全部发送过来再解码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>HTTP的通信传输内容的不同可以分为以下两种</p> <ol><li>简单的字符串传输（文本传输）</li> <li>多部分对象传输（传输内容含有文件，图片，音频等二进制数据;文本传输+二进制传输）</li></ol> <p>简单的文本传输只需要将内容变成字符串（或许会添加内容压缩操作）放在HTTP报文中。</p> <p>而文本传输+二进制传输则需要特殊的实体类型来进行传输</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>在这里要提一下实体主体和报文主体的区别：
+报文:是HTTP通信中的基本单位，由8位组字节流组成，通过HTTP进行传输
+实体：作为请求或者响应的有效载荷数据被传输，其内容由实体首部和实体主体组成
+HTTP报文的主体用于传输请求或响应的实体主体
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>而为了能进行文本传输+二进制传输，HTTP根据MINE机制实现了以下多部分对象</p> <ol><li>multipart/form-data(在web表单文件上传时使用，在web开发中这个比较常用)</li> <li>multipart/byteranges（状态码206响应报文包含多个范围的内容使用）</li></ol> <p>在HTTP的通信过程中，两种可以通过3种机制来协商服务端所要返回的内容</p> <p>这三种机制分别如下</p> <ol><li>服务端驱动协商</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>服务端根据请求报文的报文头相关字段来判断应该返回给什么类型的资源
+相关首部字段如下
+1. Accept
+2. Accept-Charset
+3. Accept-Encoding
+4. Accept-Language
+5. Content-Language
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ol start="2"><li>客户端驱动协商</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>在客户端由客户选择自己所想要的资源
+例如，在一个网站中，是想要英文版本的还是要中文版本的，则由用户手动切换语言，然后通过JavaScript将用户所做出的选择发送给服务端，服务端根据请求报文返回相应资源
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="3"><li>透明协商</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>服务端驱动协商 + 客户端驱动协商
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <div class="over">
+            完
+            <div class="block"></div></div> <div id="gitalk-container"></div></div> <div class="catalog "><!----> <div class="level1"></div> <a href="#基本介绍" nofollow class="level2">基本介绍</a><a href="#报文的数据结构" nofollow class="level2">报文的数据结构</a><a href="#传输过程" nofollow class="level2">传输过程</a> <!----></div> <!----></div></div> <div class="foot"> Re_star</div></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.d00a89e3.js" defer></script><script src="/blog/assets/js/9.10916384.js" defer></script><script src="/blog/assets/js/1.e28a081d.js" defer></script><script src="/blog/assets/js/50.7f82b6d3.js" defer></script>
+  </body>
+</html>
