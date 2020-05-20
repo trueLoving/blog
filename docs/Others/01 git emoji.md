@@ -1,5 +1,10 @@
 ---
-title: git commit emoji
+title: git commit emoji,
+categories:
+ - Git
+tags:
+ - git
+date: 2020-04-21
 ---
 
 

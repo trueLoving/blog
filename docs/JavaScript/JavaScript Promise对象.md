@@ -1,10 +1,15 @@
 ---
 title: Promise对象
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2020-03-11
 ---
 
 ## 前言
 Promise对象，是ES6新出的对象，主要目的是为了处理异步操作
-```txt
+```
 异步操作：通常来讲是指当我们去执行一种操作时，我们无法立即得到函数所执行后的结果，需要等待一段时间才能得到函数执行后的结果
 常见的异步操作如下:
 1. 定时器
@@ -27,7 +32,7 @@ Object.prototype.toString.call(Promise) // "[object Function]"
 ```
 ​那么，Promise对象究竟是什么东西，这里有两个定义
 
-```txt
+```
 1. 所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。
 Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。（网址：http://es6.ruanyifeng.com/#docs/promise）
 2. Promise对象用于表示一个异步操作的最终完成 (或失败), 及其结果值。（网址：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise）
@@ -47,7 +52,7 @@ Promise 提供统一的 API，各种异步操作都可以用同样的方法进�
 
 ​	接下来，就是来说说Promise对象的一些基本概念。
 
-```txt
+```
 注意：我们要搞清楚我们应该什么时候使用Promise对象（一般只要我们需要异步操作的时候都可以使用Promise对象）。不要因为去使用Promise对象而去使用Promise对象
 ```
 

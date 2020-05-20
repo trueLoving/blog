@@ -1,21 +1,43 @@
 module.exports = {
-    title: "Re_Star's Blog",//网站名称
-    description: '一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ',//网站描述
+    // title: "Re_Star's Blog",//网站名称
+    // description: '一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ',//网站描述
     base: '/blog/',
+    theme: 'reco',
     themeConfig: {
-        author: 'Re_star',
+        // 博客配置
+        blogConfig: {
+            category: {
+                location: 1,     // 在导航栏菜单中所占的位置，默认2
+                text: 'Category' // 默认文案 “分类”
+            },
+            tag: {
+                location: 2,     // 在导航栏菜单中所占的位置，默认3
+                text: 'Tag'      // 默认文案 “标签”
+            }
+        },
+        // sidebar: 'auto',//在所有页面中启用自动生成侧栏
+        author: 'Re_Star',
+        authorAvatar: '/avatar.png',
+        type: 'blog',
+        logo:'/logo.png',
         nav: [
-            { text: '主页', link: '/' },
-            { text: '目录', link: '/catalog' },
+            { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
+            { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ],
-        smoothScroll: true,//选填
-        catalogUrl: '/catalog',//必填 目录路径
-        lastUpdated: 'Last Updated',//必填：文章显示最新修改时间
-        search: false,
-        footer: 'Re_star',//选填
-    },
-    markdown: {
-        lineNumbers: true
-    },
-    theme: 'ting'//必填：使用vuepress-theme-ting 主题
+        friendLink: [
+            {
+                title: 'vuepress-theme-reco',
+                desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+                logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+                link: 'https://vuepress-theme-reco.recoluan.com'
+            },
+            {
+                title: '午后南杂',
+                desc: 'Enjoy when you can, and endure when you must.',
+                email: 'recoluan@qq.com',
+                link: 'https://www.recoluan.com'
+            },
+            // ...
+        ]
+    }
 }

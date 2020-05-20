@@ -1,11 +1,16 @@
 ---
 title: Symbol对象
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-12-30
 ---
 ## 基本使用
 
 ​	Symbol是es6新增的一个基本的数据类型。增加该类型的主要目的是为了能够实现对象的属性名能够唯一化。
 
-```txt
+```
 最新的ECMAScript标准定义了8中数据类型
 7种基本数据类型
 - 布尔值(Boolean):true/false
@@ -95,7 +100,7 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 
 #### 1. Symbol.iterator(Object)
 
-```txt
+```
 该属性为每一个对象定义一个默认的迭代器。该迭代器可以被for...of循环使用。
 我们可以使用该属性为该对象设置默认的迭代器
 ```
@@ -116,7 +121,7 @@ console.log([...o]);
 
 #### 2. Symbol.toPrimitive（Object）
 
-```txt
+```
 该属性是一个内置的Symbol值，它是作为对象的函数值属性存在的，当对象转换为对应的原始值时，会调用此函数
 控制该对象被强制转换成其他数据类型时的处理方法
 ```
@@ -150,7 +155,7 @@ console.log(new Boolean(o));
 
 #### 3.Symbol.toStringTag(Class)
 
-```txt
+```
 该属性是一个内置属性，它通常作为对象的属性键使用，对应的属性名应该为字符串类型，这个字符串用来表示该对象的自定义类型标签，只有内置的Object.prototype.toString()方法会去读取这个标签并把它包含在自己的返回值里
 ```
 
@@ -168,7 +173,7 @@ console.log(Object.prototype.toString.call(new A()));
 
 #### 4. **Symbol.spcies**
 
-```txt
+```
 该属性是一个函数值属性，其被构造函数用于创建派生对象
 该属性可以允许子类覆盖对象的默认构造函数
 ```
@@ -193,7 +198,7 @@ console.log(mapped instanceof Array);  // true
 
 #### 1. **Symbol.for()**
 
-```txt
+```
 该方法会根据给定的键 key，来从运行时的 symbol 注册表中找到对应的 symbol，如果找到了，则返回它，否则，新建一个与该键关联的 symbol，并放入全局 symbol 注册表中。
 ```
 
@@ -212,7 +217,7 @@ Symbol("demo.B") === Symbol("demo.B");
 
 #### 2. **Symbol.keyFor()**
 
-```txt
+```
 该方法用来获取 symbol 注册表中与某个 symbol 关联的键。
 ```
 

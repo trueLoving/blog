@@ -1,5 +1,10 @@
 ---
 title: BFC
+categories:
+ - FrontEnd
+tags:
+ - css
+date: 2020-03-11
 ---
 
 ## 简单认识
@@ -14,7 +19,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 2. 开启BFC的元素和其子元素不会发生外边距重叠问题
 3. 开启BFC的元素可以包含浮动的子元素
 
-```txt
+```
 在这里提一下，如果我们想让同级的元素，其中一个元素已经设置浮动，而我们不想让另外一个元素受其浮动的影响，则可以在当前元素设置clear属性。clear属性的作用就是清除浮动元素对当前元素所产生的影响
 
 其原理是设置清除浮动以后，浏览器会自动为该元素添加一个上外边距，来使得其位置不会收到浮动元素的影响
@@ -23,7 +28,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 ## 开启元素的BFC属性方法
 
 1. 设置父元素的overflow为非visiable值
-```txt
+```
 但是我们这样做会带来以下问题
 1. 会带来样式影响
 2. 代码语义不清楚
@@ -32,7 +37,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 ```
 2. 设置父元素的display:inline-block
 3. 设置父元素的**display:flow-root**
-```txt
+```
 按照官方文档来说，这是来开启元素BFC属性的最好方式，因为它对其他元素的影响比较低
 ```
 4. 设置元素的position为absolute/fixed
@@ -45,7 +50,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 
 #### 1. 消除浮动所带来的影响
 
-```txt
+```
 一般我们为一个元素设置浮动，那么该元素就会脱离文档流，我们可以让该元素向左或者向右移动，从而实现水平布局
 但是，这样做会造成“高度塌陷”的问题，影响页面的布局
 如下图所示
@@ -53,7 +58,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 
 <img :src="$withBase('/CSS/CSS BFC01.PNG')" alt="mixureSecure">
 
-```txt
+```
 父元素中的子元素溢出，从而导致父元素同级的其他元素的布局发生变化
 但是，只要我们为浮动元素的父元素开启BFC,就可以使得父元素包含浮动元素
 在这里，我们设置父元素的属性overflow:hidden即可达到目的
@@ -105,7 +110,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 
 #### 2. 消除外边距折叠的问题
 
-```txt
+```
 外边距折叠的问题是指当父元素和子元素的左上角位于同一个点，当我们设置子元素的margin-top值，会导致移动整个父元素一起移动
 ```
 测试代码如下
@@ -159,7 +164,7 @@ BFC（Block formatting contexts）块格式上下文，指的是在该元素中�
 <img :src="$withBase('/CSS/CSS BFC04.PNG')" alt="mixureSecure">
 
 
-```txt
+```
 当然，除了为该元素的父元素开启BFC属性，我们也可以将设置子元素的margin-top改为设置父元素的padding-top.这样也是可以达到相同的作用的
 ```
 

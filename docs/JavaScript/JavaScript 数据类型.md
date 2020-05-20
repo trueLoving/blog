@@ -1,5 +1,10 @@
 ---
 title: 数据类型
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-09-21
 ---
 
 ## 数据判断方法

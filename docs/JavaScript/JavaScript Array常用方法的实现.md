@@ -1,5 +1,10 @@
 ---
 title: Array常用方法的实现
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-01-11
 ---
 
 ### 1. Array.prototype.indexOf

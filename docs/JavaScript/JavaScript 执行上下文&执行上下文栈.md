@@ -1,5 +1,10 @@
 ---
 title: 执行上下文&执行上下文栈
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-05-21
 ---
 
 ## 前言

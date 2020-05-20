@@ -1,5 +1,10 @@
 ---
 title: vue的基本认识和使用
+categories:
+ - FrontEnd
+tags:
+ - vue
+date: 2020-01-21
 ---
 
 ## 参考资料

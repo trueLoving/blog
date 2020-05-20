@@ -1,5 +1,10 @@
 ---
 title: Generator
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-12-11
 ---
 ## Generator原型
 

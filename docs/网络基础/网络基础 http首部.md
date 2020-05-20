@@ -1,5 +1,10 @@
 ---
 title: http首部
+categories:
+ - Computer Basics
+tags:
+ - 网络基础
+date: 2019-12-20
 ---
 
 ## 基本认识
@@ -10,7 +15,7 @@ http的首部是http报文的一个非常重要的组成部分，客户端和服
 
 而首部字段的组成方式就是
 
-```txt
+```
 首部字段名：字段值1,字段值2,字段值3
 // Content-Type:text/html
 // 这个首部字段的意思是客户端希望范围的响应内容类型是text/html
@@ -40,7 +45,7 @@ http的首部是http报文的一个非常重要的组成部分，客户端和服
 
 而除了以下8个字段之外，其他字段都属于端到端首部字段
 
-```txt
+```
 1. Connectiom
 2. Keep-Alive
 3. Proxy-Authenticate
@@ -130,7 +135,7 @@ Cookie，Set-Cookies等字段用于将客户端的Cookies发送到服务端去
 
 例如，现在比较常见的用户认证方式jwt
 
-```txt
+```
 jwt,全称 json web token,是一种用户认证方式，一般在单点登录系统中使用
 jwt的基本流程
 1. 客户端想服务器发送用户认证，用户认证成功服务端返回一个token令牌

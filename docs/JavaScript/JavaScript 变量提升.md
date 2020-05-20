@@ -1,5 +1,10 @@
 ---
 title: hoisting(变量提升)
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-07-19
 ---
 
 ## 基本认识
@@ -57,7 +62,7 @@ function fA(){
     console.log("hello fA");
 }
 ```
-```txt
+```
 在这里提一下函数声明的三种方式
 1. new Function(例如var f = new Function(...args))
 2. 函数声明(例如f(){})

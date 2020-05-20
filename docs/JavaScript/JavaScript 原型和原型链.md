@@ -1,5 +1,10 @@
 ---
 title: 原型&原型链
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-03-21
 ---
 ## 基本认识
 

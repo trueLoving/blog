@@ -1,5 +1,10 @@
 ---
 title: HTTP的通信过程
+categories:
+ - Computer Basics
+tags:
+ - 网络基础
+date: 2019-11-24
 ---
 ## 基本介绍
 

@@ -1,5 +1,10 @@
 ---
 title: 流程图
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-06-11
 ---
 
 ## 事件循环机制

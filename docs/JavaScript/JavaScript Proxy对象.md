@@ -1,5 +1,10 @@
 ---
 title: Proxy对象
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-11-16
 ---
 ## 基础认识
 

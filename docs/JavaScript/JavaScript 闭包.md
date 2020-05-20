@@ -1,5 +1,10 @@
 ---
 title: 闭包
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2019-07-11
 ---
 
 ## 认识

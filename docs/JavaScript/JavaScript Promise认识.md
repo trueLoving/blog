@@ -1,5 +1,10 @@
 ---
 title: Promise 认识
+categories:
+ - FrontEnd
+tags:
+ - javascript
+date: 2020-05-11
 ---
 
 # Promise

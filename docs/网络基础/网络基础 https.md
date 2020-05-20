@@ -1,5 +1,10 @@
 ---
 title: https
+categories:
+ - Computer Basics
+tags:
+ - 网络基础
+date: 2019-09-20
 ---
 ## 基本认识
 
@@ -70,7 +75,7 @@ ssl通信过程的目的是为了能让发送端和接收端进行密钥交换�
 
 关于http通信的具体过程可以参考该文章：[网络基础 HTTP的通信过程](https://blog.csdn.net/bleeding_sky/article/details/104545151)
 
-```txt
+```
 注：在https通信的http通信过程中，它在发送数据时会附加一种叫做mac的报文摘要。MAC能够查知报文是否遭到篡改，从而保护报文的完整性
 ```
 

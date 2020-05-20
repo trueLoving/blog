@@ -1,5 +1,10 @@
 ---
 title: v-slot指令
+categories:
+ - FrontEnd
+tags:
+ - vue
+date: 2020-02-06
 ---
 
 ## 前言
