@@ -10,6 +10,7 @@
     "vuepress": "^1.4.0"
   },
   "devDependencies": {
+    "@vuepress/plugin-register-components": "^1.5.0",
     "vuepress-theme-reco": "^1.4.5",
     "vuepress-theme-ting": "^1.4.5"
   },
