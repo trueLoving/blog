@@ -1,6 +1,7 @@
 module.exports = {
     // title: "Re_Star's Blog",//网站名称
     // description: '一个轮子狂魔的学习笔记     (～￣(OO)￣)ブ',//网站描述
+    title: "Re_Star's Blog",
     base: '/blog/',
     theme: 'reco',
     themeConfig: {
@@ -23,21 +24,6 @@ module.exports = {
         nav: [
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
-        ],
-        friendLink: [
-            {
-                title: 'vuepress-theme-reco',
-                desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-                logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-                link: 'https://vuepress-theme-reco.recoluan.com'
-            },
-            {
-                title: '午后南杂',
-                desc: 'Enjoy when you can, and endure when you must.',
-                email: 'recoluan@qq.com',
-                link: 'https://www.recoluan.com'
-            },
-            // ...
         ]
     }
 }

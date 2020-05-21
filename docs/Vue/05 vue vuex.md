@@ -20,7 +20,7 @@ vuex的工作流程如下图所示
 <img src="https://vuex.vuejs.org/vuex.png">
 
 `描述`
-```txt
+```
 1. 当组件调用dispatch方法时会触发vuex的action方法,在action方法中我们可以执行异步操作(api的请求...)
 2. 在action方法中我们可以通过调用mutation方法来更新state中的数据
 3. 一旦state中的数据发生变化,那么用state数据渲染的相关组件视图就会发生变化
@@ -193,7 +193,7 @@ export default{
 ```
 
 描述
-```txt
+```
 1. 当我们点击组件2的按钮时,会触发action.changeA方法,并向其传递参数10
 2. 此时组件2的视图就会发生变化,且store.state.a的值也会发生变化
 3. 组件1的视图也会发生变化,因为组件1渲染时所使用的数据来自store.state.a,因为store.state.a发生变化,组件1的视图就发生了变化
