@@ -1,5 +1,6 @@
 module.exports = {
     title: "Re_Star's Blog",
+    description:"每天都希望能够做自己喜欢做的事情",
     base: '/blog/',
     theme: 'reco',
     themeConfig: {
@@ -22,5 +23,6 @@ module.exports = {
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ]
-    }
+    },
+    plugins: ['go-top']
 }

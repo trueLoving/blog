@@ -2,36 +2,37 @@
   <div class="home-blog">
     <Navbar class="custome-navbar" id="navbar"></Navbar>
 
-    <div class="hero" :style="{ ...bgImageStyle }">
-      <div
-        class="mask"
-        :style="{
+    <ModuleTransition delay="0.2">
+      <div class="hero" :style="{ ...bgImageStyle }">
+        <div
+          class="mask"
+          :style="{
       background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''}) center/cover no-repeat`}"
-      ></div>
-      <ModuleTransition>
-        <img
-          v-if="recoShowModule && $frontmatter.heroImage"
-          :style="heroImageStyle || {}"
-          :src="$withBase($frontmatter.heroImage)"
-          alt="hero"
-        />
-      </ModuleTransition>
-      <div class="test-container">
-        <ModuleTransition delay="0.04">
-          <h1
-            v-if="recoShowModule && $frontmatter.heroText !== null"
-          >{{ $frontmatter.heroText || $title || 'vuePress-theme-reco' }}</h1>
+        ></div>
+        <ModuleTransition>
+          <img
+            v-if="recoShowModule && $frontmatter.heroImage"
+            :style="heroImageStyle || {}"
+            :src="$withBase($frontmatter.heroImage)"
+            alt="hero"
+          />
         </ModuleTransition>
+        <div class="test-container">
+          <ModuleTransition delay="0.1">
+            <h1
+              v-if="recoShowModule && $frontmatter.heroText !== null"
+            >{{ $frontmatter.heroText || $title || 'vuePress-theme-reco' }}</h1>
+          </ModuleTransition>
 
-        <ModuleTransition delay="0.08">
-          <p
-            v-if="recoShowModule && $frontmatter.tagline !== null"
-            class="description"
-          >{{ $frontmatter.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
-        </ModuleTransition>
+          <ModuleTransition delay="0.12">
+            <p
+              v-if="recoShowModule && $frontmatter.tagline !== null"
+              class="description"
+            >{{ $frontmatter.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
+          </ModuleTransition>
+        </div>
       </div>
-    </div>
-
+    </ModuleTransition>
     <ModuleTransition delay="0.16">
       <div v-show="recoShowModule" class="home-blog-wrapper">
         <div class="blog-list">
@@ -156,7 +157,7 @@ export default {
       if (top > 1000) {
         navbar.style.opacity = 1;
       } else {
-        navbar.style.opacity = 0.1;
+        navbar.style.opacity = 0;
       }
     });
   },
@@ -409,7 +410,7 @@ export default {
 </style>
 <style scoped>
 .custome-navbar {
-  opacity: 0.1;
+  opacity: 0;
   transition: 2 ease;
 }
 .custome-navbar:hover {
