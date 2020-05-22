@@ -1,5 +1,5 @@
 ---
-title: git commit emoji,
+title: git commit emoji
 categories:
  - Git
 tags:

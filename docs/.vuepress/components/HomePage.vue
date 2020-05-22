@@ -81,6 +81,7 @@
     <ModuleTransition delay="0.24">
       <Content v-show="recoShowModule" class="home-center" custom />
     </ModuleTransition>
+    
   </div>
 </template>
 
@@ -414,7 +415,7 @@ export default {
   transition: 2 ease;
 }
 .custome-navbar:hover {
-  opacity: 0.8 !important;
+  opacity: 0.4 !important;
 }
 .home-blog {
   padding: 0;
