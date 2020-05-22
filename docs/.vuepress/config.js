@@ -28,5 +28,5 @@ module.exports = {
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ]
     },
-    plugins: ['go-top']
+    plugins: ['go-top','cursor-effects','ribbon','dynamic-title']
 }
