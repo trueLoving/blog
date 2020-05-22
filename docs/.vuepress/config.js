@@ -7,6 +7,7 @@ module.exports = {
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
     ],
     themeConfig: {
+        modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
         // 博客配置
         blogConfig: {
             category: {
@@ -28,5 +29,5 @@ module.exports = {
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ]
     },
-    plugins: ['go-top','cursor-effects','ribbon','dynamic-title']
+    plugins: ['go-top', 'cursor-effects', 'ribbon', 'dynamic-title']
 }

@@ -409,6 +409,7 @@ export default {
   }
 }
 </style>
+
 <style scoped>
 .custome-navbar {
   opacity: 0;
