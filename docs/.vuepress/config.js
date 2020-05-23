@@ -25,7 +25,6 @@ module.exports = {
         logo: '/logo.png',
         nav: [
             { text: 'Home', link: '/', icon: 'reco-home' },
-            { text: 'Notes', link: '/BookList/', icon: 'reco-document' },
             { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ]
