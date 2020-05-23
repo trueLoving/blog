@@ -1,5 +1,6 @@
 <template>
   <div class="home-blog">
+    
     <Navbar class="custome-navbar" id="navbar"></Navbar>
 
     <ModuleTransition delay="0.2">
