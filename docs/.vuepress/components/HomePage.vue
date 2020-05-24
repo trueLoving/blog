@@ -1,6 +1,5 @@
 <template>
   <div class="home-blog">
-    
     <Navbar class="custome-navbar" id="navbar"></Navbar>
 
     <ModuleTransition delay="0.2">
@@ -10,14 +9,9 @@
           :style="{
       background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''}) center/cover no-repeat`}"
         ></div>
-        <ModuleTransition>
-          <img
-            v-if="recoShowModule && $frontmatter.heroImage"
-            :style="heroImageStyle || {}"
-            :src="$withBase($frontmatter.heroImage)"
-            alt="hero"
-          />
-        </ModuleTransition>
+
+        <div class="scroll" @click="scroll"></div>
+
         <div class="test-container">
           <ModuleTransition delay="0.1">
             <h1
@@ -82,7 +76,6 @@
     <ModuleTransition delay="0.24">
       <Content v-show="recoShowModule" class="home-center" custom />
     </ModuleTransition>
-    
   </div>
 </template>
 
@@ -189,7 +182,10 @@ export default {
       this.$page.currentPage = page;
       this._setStoragePage(page);
     },
-    getOneColor
+    getOneColor,
+    scroll(){
+
+    }
   }
 };
 </script>
@@ -429,5 +425,20 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 80px;
+}
+.scroll {
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid whitesmoke;
+  border-right: 3px solid whitesmoke;
+  
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  cursor: pointer;
+  transform: rotate(135deg);
+}
+.scroll:hover {
+  opacity: 0.4;
 }
 </style>
