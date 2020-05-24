@@ -183,8 +183,11 @@ export default {
       this._setStoragePage(page);
     },
     getOneColor,
-    scroll(){
-
+    scroll() {
+      const el = document.getElementsByClassName("home-blog-wrapper")[0];
+      this.$nextTick(function() {
+        window.scrollTo({ behavior: "smooth", top: el.offsetTop });
+      });
     }
   }
 };
@@ -431,7 +434,7 @@ export default {
   height: 20px;
   border-top: 3px solid whitesmoke;
   border-right: 3px solid whitesmoke;
-  
+
   position: absolute;
   top: 90vh;
   left: 50%;
