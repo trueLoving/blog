@@ -186,7 +186,7 @@ export default {
     scroll() {
       const el = document.getElementsByClassName("home-blog-wrapper")[0];
       this.$nextTick(function() {
-        window.scrollTo({ behavior: "smooth", top: el.offsetTop });
+        window.scrollTo({ behavior: "smooth", top: el.offsetTop+10 });
       });
     }
   }
@@ -414,9 +414,6 @@ export default {
 .custome-navbar {
   opacity: 0;
   transition: 2 ease;
-}
-.custome-navbar:hover {
-  opacity: 0.4 !important;
 }
 .home-blog {
   padding: 0;
