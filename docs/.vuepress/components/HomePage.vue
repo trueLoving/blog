@@ -1,6 +1,13 @@
 <template>
   <div class="home-blog">
-    <Navbar class="custome-navbar" id="navbar"></Navbar>
+    <Navbar class="custome-navbar" id="navbar" @toggle-sidebar="toggleSidebar"></Navbar>
+
+    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+
+    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" class="test">
+      <slot name="sidebar-top" slot="top" />
+      <slot name="sidebar-bottom" slot="bottom" />
+    </Sidebar>
 
     <ModuleTransition delay="0.2">
       <div class="hero" :style="{ ...bgImageStyle }">
@@ -28,6 +35,7 @@
         </div>
       </div>
     </ModuleTransition>
+
     <ModuleTransition delay="0.16">
       <div v-show="recoShowModule" class="home-blog-wrapper">
         <div class="blog-list">
@@ -89,6 +97,8 @@ import ModuleTransition from "@theme/components/ModuleTransition";
 import PersonalInfo from "@theme/components/PersonalInfo";
 import { getOneColor } from "@theme/helpers/other";
 import moduleTransitonMixin from "@theme/mixins/moduleTransiton";
+import Sidebar from "@theme/components/Sidebar";
+import { resolveSidebarItems } from "@theme/helpers/utils";
 
 export default {
   mixins: [pagination, moduleTransitonMixin],
@@ -98,13 +108,15 @@ export default {
     FriendLink,
     ModuleTransition,
     PersonalInfo,
-    Navbar
+    Navbar,
+    Sidebar
   },
   data() {
     return {
       recoShow: false,
       currentPage: 1,
-      tags: []
+      tags: [],
+      isSidebarOpen: false
     };
   },
   computed: {
@@ -141,6 +153,14 @@ export default {
     },
     heroHeight() {
       return document.querySelector(".hero").clientHeight;
+    },
+    sidebarItems() {
+      return resolveSidebarItems(
+        this.$page,
+        this.$page.regularPath,
+        this.$site,
+        this.$localePath
+      );
     }
   },
   mounted() {
@@ -149,7 +169,8 @@ export default {
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", function(event) {
       const top = document.documentElement.scrollTop;
-      if (top > 1000) {
+      const innerHeight = window.innerHeight;
+      if (top > innerHeight) {
         navbar.style.opacity = 1;
       } else {
         navbar.style.opacity = 0;
@@ -186,8 +207,11 @@ export default {
     scroll() {
       const el = document.getElementsByClassName("home-blog-wrapper")[0];
       this.$nextTick(function() {
-        window.scrollTo({ behavior: "smooth", top: el.offsetTop+10 });
+        window.scrollTo({ behavior: "smooth", top: el.offsetTop + 10 });
       });
+    },
+    toggleSidebar(to) {
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
     }
   }
 };
