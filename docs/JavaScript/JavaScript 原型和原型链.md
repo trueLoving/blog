@@ -1,7 +1,7 @@
 ---
 title: 原型&原型链
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-03-21

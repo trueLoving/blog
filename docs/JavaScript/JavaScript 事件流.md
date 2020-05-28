@@ -1,7 +1,7 @@
 ---
 title: 事件流
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-06-21

@@ -1,7 +1,7 @@
 ---
 title: Symbol对象
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-12-30

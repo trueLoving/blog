@@ -1,7 +1,7 @@
 ---
 title: 浏览器从url到显示页面的过程
 categories:
- -  Computer Basics
+ -  计算机基础
 tags:
  - 网络基础
 date: 2019-10-21

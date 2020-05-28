@@ -1,7 +1,7 @@
 ---
 title: vue组件的基本认识
 categories:
- - FrontEnd
+ - 前端
 tags:
  - vue
 date: 2020-01-31

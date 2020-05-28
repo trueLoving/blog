@@ -1,7 +1,7 @@
 ---
 title: git commit emoji
 categories:
- - Git
+ - 工具
 tags:
  - git
 date: 2020-04-21

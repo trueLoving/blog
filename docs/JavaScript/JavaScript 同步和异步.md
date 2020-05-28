@@ -1,7 +1,7 @@
 ---
 title: 同步&异步
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-01-21

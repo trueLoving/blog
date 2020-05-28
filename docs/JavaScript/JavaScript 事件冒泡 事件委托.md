@@ -1,7 +1,7 @@
 ---
 title: 事件冒泡&事件委托
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-07-21

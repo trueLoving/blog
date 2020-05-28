@@ -1,7 +1,7 @@
 ---
 title: 数据类型
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-09-21

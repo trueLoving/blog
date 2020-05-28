@@ -1,7 +1,7 @@
 ---
 title: vuex
 categories:
- - FrontEnd
+ - 前端
 tags:
  - vue
 date: 2020-02-18

@@ -1,7 +1,7 @@
 ---
 title: 作用域链
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-11-21

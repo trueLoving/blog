@@ -1,7 +1,7 @@
 ---
 title: 选择器
 categories:
- - FrontEnd
+ - 前端
 tags:
  - css
 date: 2019-11-21

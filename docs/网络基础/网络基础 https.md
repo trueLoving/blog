@@ -1,7 +1,7 @@
 ---
 title: https
 categories:
- - Computer Basics
+ - 计算机基础
 tags:
  - 网络基础
 date: 2019-09-20

@@ -1,7 +1,7 @@
 ---
 title: Promise对象
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2020-03-11

@@ -3,6 +3,9 @@ module.exports = {
     description: "每天都希望能够做自己喜欢做的事情",
     base: '/blog/',
     theme: 'reco',
+    markdown: {
+        lineNumbers: true
+    },
     head: [
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
     ],

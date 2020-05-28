@@ -1,7 +1,7 @@
 ---
 title: JavaScript 小技巧-1
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-02-21

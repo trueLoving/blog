@@ -1,7 +1,7 @@
 ---
 title: Array常用方法的实现
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-01-11

@@ -1,7 +1,7 @@
 ---
 title: DOM的基本介绍
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-11-11

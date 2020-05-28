@@ -1,7 +1,7 @@
 ---
 title: 闭包
 categories:
- - FrontEnd
+ - 前端
 tags:
  - javascript
 date: 2019-07-11

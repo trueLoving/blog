@@ -1,7 +1,7 @@
 ---
 title: http基本认识
 categories:
- -  Computer Basics
+ -  计算机基础
 tags:
  - 网络基础
 date: 2019-11-20

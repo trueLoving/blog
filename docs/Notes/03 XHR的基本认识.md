@@ -1,9 +1,9 @@
 ---
 title: XHR的基本认识
 categories:
- -  Notes
+ -  笔记
 tags:
- - notes
+ - 笔记
 date: 2020-05-25
 ---
 
