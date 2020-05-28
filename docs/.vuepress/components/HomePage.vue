@@ -1,10 +1,10 @@
 <template>
   <div class="home-blog">
-    <Navbar class="custome-navbar" id="navbar" @toggle-sidebar="toggleSidebar"></Navbar>
+    <Navbar class="custome-navbar" id="navbar" @toggle-sidebar="toggleSidebar" ></Navbar>
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+    <div class="sidebar-mask" @click="closeSidebar" id="sidebar-mask"></div>
 
-    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" class="test">
+    <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" id="sidebar">
       <slot name="sidebar-top" slot="top" />
       <slot name="sidebar-bottom" slot="bottom" />
     </Sidebar>
@@ -211,7 +211,12 @@ export default {
       });
     },
     toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+      document.getElementById('sidebar').style.transform="translateX(0)";
+      document.getElementById('sidebar-mask').style.display="block";
+    },
+    closeSidebar(){
+      document.getElementById('sidebar').style.transform="";
+      document.getElementById('sidebar-mask').style.display="none";
     }
   }
 };
