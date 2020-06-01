@@ -3,10 +3,19 @@ title: git commit emoji
 categories:
  - 工具
 tags:
- - git
+ - 工具
 date: 2020-04-21
 ---
 
+
+:::tip
+
+在提交git commit信息时,发现可以加一些表情符号,于是就记录了哪些表情是可以加的
+
+:::
+
+
+<!-- more -->
 
 1. 提交格式
 ```shell
