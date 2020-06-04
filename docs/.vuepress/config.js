@@ -7,7 +7,8 @@ module.exports = {
         lineNumbers: true
     },
     head: [
-        ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+        ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+        ['link', { rel: 'icon', href: '/logo.png' }]
     ],
     themeConfig: {
         modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
@@ -32,7 +33,5 @@ module.exports = {
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
         ]
     },
-    // plugins: ['go-top', 'cursor-effects', 'ribbon', 'dynamic-title']
-    plugins: ['go-top', 'cursor-effects', 
-     'dynamic-title']
+    plugins: ['go-top', 'cursor-effects', 'dynamic-title']
 }

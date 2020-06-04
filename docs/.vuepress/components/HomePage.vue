@@ -1,5 +1,6 @@
 <template>
   <div class="home-blog">
+   
     <Navbar class="custome-navbar" id="navbar" @toggle-sidebar="toggleSidebar" ></Navbar>
 
     <div class="sidebar-mask" @click="closeSidebar" id="sidebar-mask"></div>
@@ -8,6 +9,7 @@
       <slot name="sidebar-top" slot="top" />
       <slot name="sidebar-bottom" slot="bottom" />
     </Sidebar>
+
 
     <ModuleTransition delay="0.2">
       <div class="hero" :style="{ ...bgImageStyle }">
@@ -84,6 +86,7 @@
     <ModuleTransition delay="0.24">
       <Content v-show="recoShowModule" class="home-center" custom />
     </ModuleTransition>
+
   </div>
 </template>
 
@@ -167,10 +170,9 @@ export default {
     this.recoShow = true;
     this._setPage(this._getStoragePage());
     const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", function(event) {
+    window.addEventListener("scroll", ()=> {
       const top = document.documentElement.scrollTop;
-      const innerHeight = window.innerHeight;
-      if (top > innerHeight) {
+      if (top > 0) {
         navbar.style.opacity = 1;
       } else {
         navbar.style.opacity = 0;
@@ -207,7 +209,7 @@ export default {
     scroll() {
       const el = document.getElementsByClassName("home-blog-wrapper")[0];
       this.$nextTick(function() {
-        window.scrollTo({ behavior: "smooth", top: el.offsetTop + 10 });
+        window.scrollTo({ behavior: "smooth", top: el.offsetTop-60 });
       });
     },
     toggleSidebar(to) {
@@ -442,7 +444,7 @@ export default {
 <style scoped>
 .custome-navbar {
   opacity: 0;
-  transition: 2 ease;
+  transition: all .4s ease;
 }
 .home-blog {
   padding: 0;
