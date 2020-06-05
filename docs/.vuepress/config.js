@@ -31,7 +31,15 @@ module.exports = {
             { text: '首页', link: '/', icon: 'reco-home' },
             { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
             { text: 'Github', link: 'https://github.com/trueLoving', icon: 'reco-github' }
-        ]
+        ],
+        friendLink: [
+            {
+              title: 'kqzh',
+              desc: 'a golang coder&student',
+              logo: "https://www.liuxinc.ink/images/avatar.jpg",
+              link: 'https://www.liuxinc.ink/'
+            }
+          ]
     },
     plugins: ['go-top', 'cursor-effects', 'dynamic-title']
 }
