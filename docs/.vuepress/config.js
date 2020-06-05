@@ -34,12 +34,18 @@ module.exports = {
         ],
         friendLink: [
             {
-              title: 'kqzh',
-              desc: 'a golang coder&student',
-              logo: "https://www.liuxinc.ink/images/avatar.jpg",
-              link: 'https://www.liuxinc.ink/'
+                title: 'kqzh',
+                desc: 'a golang coder',
+                logo: "https://www.liuxinc.ink/images/avatar.jpg",
+                link: 'https://www.liuxinc.ink/'
+            },
+            {
+                title: 'rookie30',
+                desc: '어떤 문제 든 반드시 답 이 있다',
+                logo: "http://ninging.top/avatar.jpg",
+                link: 'http://ninging.top/'
             }
-          ]
+        ]
     },
     plugins: ['go-top', 'cursor-effects', 'dynamic-title']
 }
