@@ -18,9 +18,6 @@ export default {
     post(){
       return this.$recoPosts;
     }
-  },
-  mounted(){
-    console.log(this.$tags._metaMap,this.$categories._metaMap);
   }
 };
 </script>

@@ -11,8 +11,9 @@
           <i class="iconfont reco-date time"></i>
           发布于 {{post.frontmatter.date | dateFormat}}
         </div>
+        <hr class="hr">
         <a :href="post.path" class="post-title">
-          <h3>{{post.title}}</h3>
+          <span>{{post.title}}...</span>
         </a>
         <div class="post-meta">
           <span>
@@ -23,7 +24,6 @@
           </span>
         </div>
         <div class="float-content">
-          <!-- <div v-html="post.excerpt" class="content"></div> -->
           <div class="post-bottom">
             <a :href="post.path" class="button-normal">
               <i class="iconfont icon-moreread more"></i>
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-
 import { dateFormat, chooseImg } from "./utils/index";
 
 export default {
@@ -50,14 +49,14 @@ export default {
       default: () => {}
     }
   },
-  computed:{
-    categoryUrl(){
+  computed: {
+    categoryUrl() {
       const category = this.post.frontmatter.categories[0];
       const path = this.$categories._metaMap[category].path;
       return path;
     },
-    tagUrl(){
-      const tag = this.post.frontmatter.tags[0]
+    tagUrl() {
+      const tag = this.post.frontmatter.tags[0];
       const path = this.$tags._metaMap[tag].path;
       return path;
     }
@@ -68,7 +67,19 @@ export default {
 };
 </script>
 
+
 <style scoped>
+
+a {
+  color: #504e4e;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif",
+    source-han-serif-sc, "PT Serif", "SongTi SC", "MicroSoft Yahei", Georgia,
+    serif;
+}
+
+a:hover {
+  color: #dd3333;
+}
 
 img {
   width: 100%;
@@ -81,54 +92,71 @@ img:hover {
   transform: scale(1.1);
 }
 
+.hr{
+  border-bottom: 2px solid rgba(128, 128, 128, 0.425);
+  margin-top: 14px;
+}
+
 .post {
   display: flex;
-  width: 50rem;
+  width: 40rem;
   box-shadow: 0.4rem 0.4rem 0.4rem 0.4rem gray;
-  margin: 4rem auto;
+  margin: 2rem auto;
   border-radius: 1rem;
-  height: 20rem;
+  height: 15rem;
   overflow: hidden;
+  color: #888;
+  font-size: 12px;
+  /* text-shadow: 0 0 1px rgba(0,0,0,.1); */
+  text-align: center;
 }
 
 .post-thumb {
-  flex: 5;
-  overflow: hidden;
+  flex: 0.65;
 }
 
 .post-content-wrap {
-  flex: 5;
+  flex: 0.4;
   padding: 1.5rem;
-  margin-top: 10px;
   position: relative;
 }
 
-.post-title h3 {
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+
+.post-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-60%);
+}
+
+.post-title span {
+  font-weight: bold; 
+  font-size: 1.2rem;
+  display: block;
+  width: 10rem;
 }
 
 .post-date .time {
   color: #888;
   font-size: 12px;
 }
+
 .post-meta {
   color: #888;
-  font-size: 0.8rem;
+  font-size: 1.2em;
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 1.6rem;
   left: 2rem;
 }
 
 .more {
-  font-size: 2rem;
-  float: right;
-  padding: 1rem;
   position: absolute;
+  font-size: 2rem;
   bottom: 1rem;
   right: 1rem;
+}
+
+.more:hover {
+  color: #dd3333;
 }
 </style>
