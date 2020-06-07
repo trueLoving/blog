@@ -1,17 +1,26 @@
 <template>
   <div class="home-blog">
     <div class="postList">
-      <PostCard></PostCard>
+      <PostCard v-for="(post,index) in post" :key="index" :post="post"></PostCard>
     </div>
   </div>
 </template>
 
 <script>
+
 import PostCard from "./PostCard";
 
 export default {
   components: {
     PostCard
+  },
+  computed:{
+    post(){
+      return this.$recoPosts;
+    }
+  },
+  mounted(){
+    console.log(this.$tags._metaMap,this.$categories._metaMap);
   }
 };
 </script>
