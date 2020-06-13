@@ -2,7 +2,6 @@
   <div class="pagination-container">
     <div style="display:inline-block">
       <div v-if="pages > 5">
-
         <span
           v-if="currentPage<5"
           v-for="item in 5"
@@ -18,7 +17,7 @@
           :class="1==currentPage?'active':''"
           @click="clickItem($event)"
         >1</span>
-        <span class="pagination-item" v-if="currentPage>=5">...</span>
+        <span class="pagination-item prevGo" v-if="currentPage>=5" @click="prevGo">...</span>
         <span
           v-if="currentPage>=5&&pages-currentPage>=5"
           v-for="item in showPages"
@@ -28,8 +27,6 @@
           :class="item-1==currentPage?'active':''"
         >{{item-1}}</span>
 
-
-
         <span
           v-if="pages-currentPage<5"
           v-for="item in 4"
@@ -37,10 +34,9 @@
           class="pagination-item"
           @click="clickItem($event)"
           :class="pages+item-5==currentPage?'active':''"
-        >
-          {{pages+item-5}}
-        </span>
-        <span class="pagination-item" v-if="pages-currentPage>5">...</span>
+        >{{pages+item-5}}</span>
+        <span class="pagination-item nextGo" v-if="pages-currentPage>5" @click="nextGo">...</span>
+
         <span
           class="pagination-item"
           :class="pages==currentPage?'active':''"
@@ -73,6 +69,24 @@
 <script>
 export default {
   name: "Pagination",
+  props: {
+    t: {
+      type: Number,
+      required: false
+    },
+    l: {
+      type: Number,
+      default: 10
+    },
+    cP: {
+      type: Number,
+      default: 1
+    },
+    s: {
+      type: Number,
+      default: 4
+    }
+  },
   computed: {
     pages() {
       return Math.ceil(this.total / this.limit);
@@ -80,46 +94,67 @@ export default {
     showPages() {
       const currentPage = this.currentPage;
       let result = [];
-
       for (let i = 1; i <= 5; i++) {
         if (currentPage * 1 + i < this.pages + 1) {
           result.push(currentPage * 1 + i);
         }
       }
-
       return result;
     }
   },
   data() {
     return {
-      total: 21,
-      limit: 10,
-      currentPage: 1
+      total: null,
+      limit: null,
+      currentPage: null,
+      step: null
     };
   },
   methods: {
     pagination() {
-      this.$emit("pagination", this.currentPage, this.limit);
+      this.$emit("pagination", {
+        currentPage: this.currentPage,
+        limit: this.limit
+      });
     },
     clickItem(event) {
-      const clickPage = event.target.innerHTML;
-      this.currentPage = clickPage;
+      this.currentPage = event.target.innerHTML;
+      this.pagination();
     },
     clickPrev() {
-      if(this.currentPage===1){
-        alert('已到达第一页');
+      if (this.currentPage === 1) {
         return;
       }
       this.currentPage--;
+      this.pagination();
     },
     clickNext() {
-      if(this.currentPage===this.pages){
-        alert('已到达最后一页');
+      if (this.currentPage === this.pages) {
         return;
       }
       this.currentPage++;
-
+      this.pagination();
+    },
+    prevGo() {
+      this.currentPage -= this.step;
+      if (this.currentPage < 1) {
+        this.currentPage = 1;
+      }
+      this.pagination();
+    },
+    nextGo() {
+      this.currentPage += this.step;
+      if (this.currentPage > this.pages) {
+        this.currentPage = this.pages;
+      }
+      this.pagination();
     }
+  },
+  created() {
+    this.total = this.t;
+    this.limit = this.l;
+    this.currentPage = this.cP;
+    this.step = this.s;
   }
 };
 </script>
