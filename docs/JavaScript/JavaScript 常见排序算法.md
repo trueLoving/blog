@@ -1,0 +1,220 @@
+---
+title: 常见排序算法
+categories:
+ - 前端
+tags:
+ - javascript 
+ - 算法
+date: 2020-06-18
+---
+
+
+:::tip
+
+常见排序算法: 插入排序/快速排序/冒泡排序/归并排序/堆排序
+
+:::
+
+
+<!-- more -->
+
+## 插入排序
+`代码`
+```js
+/**
+ * 插入排序
+ * @param {Array} array 要排序的数组
+ */
+function insertSort(array) {
+    let temp;
+    for (let i = 0; i < array.length; i++) {
+        temp = array[i];
+        for (let j = i; j > 0 && temp < array[j - 1]; j--) {
+            array[j] = array[j - 1];
+        }
+        array[j] = temp;
+    }
+    return array;
+}
+
+// ----------- test
+insertSort([3,1,2]) // [1,2,3]
+```
+
+`思路`
+
+1. 插入排序 = 元素插入 + 顺序插入
+
+2. 数组的第一个元素不动，第二个元素找左侧比它小的边界元素，然后插在该边界元素的左侧
+
+3. 第三个元素类型，以此类推插完数组中的所有元素
+
+
+## 快速排序
+`代码`
+```js
+/**
+ * 快速排序
+ * @param {Array} array 要排序的数组
+ */
+function quickSort(array) {
+
+    if (array.length <= 1) return array;
+
+    let pivotIndex = Math.floor(array.length / 2);
+
+    let pivot = array.splice(pivotIndex, 1)[0];
+
+    let left = [], right = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (pivot > array[i]) {
+            left.push(array[i]);
+        }
+        if (pivot < array[i]) {
+            right.push(array[i]);
+        }
+    }
+
+    return quickSort(left).concat([pivotIndex], quickSort(right));
+
+}
+```
+
+`思想`
+
+1. 如果数组只有这一个成员变量就直接返回该数组
+
+2. 如果数组成员变量有多个，就在数组中找一个基准元素，然后根据这个基准将整个数组分为三部分:左侧，基准，右侧.最后递归调用quickSort
+
+## 冒泡排序
+`代码`
+```js
+/**
+ * 冒泡排序
+ * @param {Array} array 要排序的数组
+ */
+function bubblingSort(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] < array[j]) {
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    }
+    return array;
+}
+```
+`思路`
+
+1. 两两比较数组元素之家的大小关系，如果前一个小于后一个，就交换，否则就不换
+
+
+## 归并排序
+`代码`
+```js
+
+function mergeSort(array){
+
+    if(array.length<=1)return array;
+
+    const len = array.length;
+    const mid = Math.floor(len/2);
+
+    const left = array.slice(0,mid);
+    const right = array.slice(mid,length);
+
+    return merge(mergeSort(left),mergeSort(right))
+
+}
+
+function merge(left,right){
+
+    const result = [];
+    let il = 0;
+    let ir = 0;
+
+    wihle(il<left.length&&ir<right.length){
+        if(left[il]<right[ir]){
+            result.push(left[il]);
+            il++;
+        }else{
+            result.push(left[ir]);
+            ir++;
+        }
+    }
+
+    while(il<left.length){
+        result.push(left[il]);
+        il++;
+    }
+
+    while(ir<right.length){
+        result.push(right[ir]);
+        ir++;
+    }
+
+    return result;
+
+}
+
+
+```
+
+`思路`
+
+1. 如果数组的长度为1，则直接返回该数组
+
+2. 如果数组的长度大于1，则将该数组分为左右两部分，然后递归分解（即左侧再分解左右，右侧再分解左右）
+
+3. 然后当分解完成后，两两合并(在这个阶段完成数组的排序)，最终合并成一个已排好序的数组
+
+
+## 堆排序
+`代码`
+```js
+function heapSort(arr) {
+    buildHeap(arr);
+    var len = arr.length;
+    for (var i = len - 1; i > 0; i--) {
+        [arr[0], arr[1]] = [arr[1], arr[0]];
+        heapify(arr, i);
+    }
+    return arr;
+}
+
+function buildHeap(arr) {
+    var len = arr.length;
+    if (len === 0) return;
+    for (var i = Math.floor(len / 2); i > 0; i--) {
+        heapify(arr, i);
+    }
+}
+
+function heapify(arr, i) {
+    var left = 2 * i + 1;
+    var right = 2 * i + 2
+    var largest = i;
+    var len = arr.length;
+    if (left < len && arr[left] > arr[largest]) {
+        largest = left;
+    }
+    if (right < left && arr[right] > arr[largest]) {
+        largest = right;
+    }
+    if (largest !== i) {
+        [arr[i], arr[largest]] = [arr[largest], arr[i]];
+        heapify(arr, largest);
+    }
+}
+```
+
+`思路`
+
+1. 将数组构建成一个最大堆
+
+2. 将数组的根节点移动到最前面，然后调整堆
+
+3. 这样就可以完成对数组的排序
+
+
