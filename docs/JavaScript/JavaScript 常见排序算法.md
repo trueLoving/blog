@@ -173,39 +173,40 @@ function merge(left,right){
 ## 堆排序
 `代码`
 ```js
-function heapSort(arr) {
-    buildHeap(arr);
-    var len = arr.length;
-    for (var i = len - 1; i > 0; i--) {
-        [arr[0], arr[1]] = [arr[1], arr[0]];
-        heapify(arr, i);
-    }
-    return arr;
+/**
+* 
+* @param {Array} array 
+*/
+function heapSort(array) {
+  let len = array.length;
+  for (let i = Math.floor(len / 2 -1); i >= 0; i--) {
+      adjustHeap(array, i,len);
+  }
+  for (let i = len - 1; i > 0; i--) {
+      swap(array,0,i);
+      adjustHeap(array,0, i);
+  }
+  return array
 }
 
-function buildHeap(arr) {
-    var len = arr.length;
-    if (len === 0) return;
-    for (var i = Math.floor(len / 2); i > 0; i--) {
-        heapify(arr, i);
-    }
-}
-
-function heapify(arr, i) {
-    var left = 2 * i + 1;
-    var right = 2 * i + 2
-    var largest = i;
-    var len = arr.length;
-    if (left < len && arr[left] > arr[largest]) {
-        largest = left;
-    }
-    if (right < left && arr[right] > arr[largest]) {
-        largest = right;
-    }
-    if (largest !== i) {
-        [arr[i], arr[largest]] = [arr[largest], arr[i]];
-        heapify(arr, largest);
-    }
+/**
+* 
+* @param {Array} array 
+* @param {Number} i 
+*/
+function adjustHeap(array, i,length) {
+  for (let j = 2 * i + 1; j < length; j = 2 * j + 1) {
+      temp = array[i];
+      if (j + 1 < length && array[j] < array[j + 1]) {
+          j++;
+      }
+      if (temp < array[j]) {
+          swap(array,i,j);
+          i = j;
+      } else {
+          break;
+      }
+  }
 }
 ```
 
