@@ -34,7 +34,7 @@ module.exports = {
         ],
         friendLink: [
             {
-                title: 'kqzh',
+                title: '卫星@kqzh',
                 desc: 'a golang coder',
                 logo: "https://www.liuxinc.ink/images/avatar.jpg",
                 link: 'https://www.liuxinc.ink/'
@@ -44,6 +44,12 @@ module.exports = {
                 desc: '어떤 문제 든 반드시 답 이 있다',
                 logo: "http://ninging.top/avatar.jpg",
                 link: 'http://ninging.top/'
+            },
+            {
+                title: 'Salt',
+                desc: '这是用于记录笔记的个人站，希望一点点的去积累每一天都有收获。',
+                logo: "https://toruneveryday.gitee.io/img/avatar.jpg",
+                link: 'https://toruneveryday.gitee.io/'
             }
         ]
     },
