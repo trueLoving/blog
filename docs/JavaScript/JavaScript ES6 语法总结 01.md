@@ -1,15 +1,15 @@
 ---
-title: ES6 特性总结
+title: ES6 语法总结 01
 categories:
  - 前端
 tags:
  - javascript
-date: 2020-07-11
+date: 2020-07-12
 ---
 
 :::tip
 
-ES6语法学习总结
+ES6语法学习总结 01
 
 :::
 
@@ -195,4 +195,183 @@ let person = {
 }
 
 console.log(person) // {name:'zhangsan',age:24}
+```
+
+
+## 箭头函数
+
+描述：ES6允许使用箭头(=>)定义函数
+
+```js
+let fn = () =>{
+    console.log('hello world');
+}
+
+fn();
+```
+
+#### 特点
+
+1. this是静态的，this始终指向函数声明时所在作用域下的this值
+
+2. 不能作为构造函数实例化对象
+
+3. 不能使用arguments变量
+
+4. 箭头函数的简写
+
+    1) 省略小括号，当形参有且只有一个的时候
+
+    2) 省略花括号，当代码体只有一条语句的时候，此时return必须省略，而且语句的执行结果就是函数的返回值
+
+#### 应用场景
+
+1. 点击div 2s后颜色变红
+```html
+<html>
+    <head>
+        <title>箭头函数使用</title>
+        <style>
+            div{
+                width:100px;
+                height:100px;
+                background:blue;
+                margin:100px
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "test"></div>
+        <script>
+            // 获取元素
+            let div = document.getElementById('test');
+            // 注册点击事件
+            div.addEventListener('click', function () {
+                setTimeout(() => {
+                    this.style.background = 'pink';
+                })
+            });
+        </script>
+    </body>
+</html>
+```
+2. 从数据返回偶数的元素
+```js
+const array = [1,3,4,5,6,7,9];
+
+const oddArr = array.filter(item=>item%2===0);
+
+console.log(oddArr) // [4,6];
+```
+
+
+箭头函数`适合与this无关的回调`(定时器，数组的方法回调)，`不适合与this有关的回调`(DOM事件，对象的方法)
+
+
+## 函数参数默认值
+
+描述：ES6允许给函数参数赋值初始值
+
+
+#### 特点
+
+1. 形参初始值，具有默认值的参数，一般位置要靠后(潜规则)
+
+2. 与解构赋值结合
+
+```js
+function fn(a,b,c=10){
+    console.log(a+b+c);
+}
+
+fn(1,2,3); // 6
+
+fn(1,2); // 13
+
+// -------------------------- // 
+
+function fn2({name,age,sex='man'}){
+    console.log(`${name},${age},${sex}`);
+}
+
+var person1 = {
+    name:'zhangsan',
+    age:24
+};
+
+var person2 = {
+    name:'baimeigui',
+    age:24,
+    sex:'woman'
+};
+
+fn2(person1); // zhangsan,24,man
+
+fn2(person2); // baimeigui,24,woman
+```
+
+## rest参数
+
+描述：ES6引入rest参数，用于获取函数的实参，用来代替arguments
+
+1. ES5获取参数
+
+2. ES6获取参数
+
+rest参数必须放在参数的最后
+
+```js
+function es5F(){
+    console.log(arguments);
+}
+
+function es6F(...rest){
+    console.log(rest);
+}
+
+es5F(1,2,3,4,5); // 类数组 [1,2,3,4,5]
+
+es6F(1,2,3,4,5); // 真数组 [1,2,3,4,5]
+```
+
+## 扩展运算符
+
+描述：'...' 扩展运算符能够将数组转换为逗号分割的参数序列
+
+1. 可以将数组成员分解为一个个的参数序列
+
+#### 应用
+
+1. 数组的合并
+
+```js
+var arr1 = [1,2,3];
+
+var arr2 = [4,5,6];
+
+var arr = [...arr1,...arr2];
+
+console.log(arr);// [1,2,3,4,5,6]
+```
+
+2. 数组的克隆
+
+```js
+let arr1 = [1,2,3];
+let arr2 = [...arr1];
+
+console.log(arr2); // [1,2,3]
+
+console.log(arr1===arr2); // false
+```
+
+3. 将伪数组转换为真正的数组
+
+```js
+function es5F(){
+    let args = [...arguments];
+    console.log(args);
+}
+
+es5F(1,2,3,4,5); // 真数组 [1,2,3,4,5]
 ```
