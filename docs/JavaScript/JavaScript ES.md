@@ -1,5 +1,5 @@
 ---
-title: ES
+title: ES的简单认识
 categories:
  - 前端
 tags:
@@ -14,6 +14,8 @@ date: 2020-07-11
 1. ECMA(European Computer Manufacturers Association)，中文名称为欧洲计算机制造协会，1994年改名为Ecma
 
 2. ECMAScript，是由Ecma国际通过ECMA-262标准化的脚本程序设计语言
+
+3. ECMA-262则是ECMA制定的脚本语言标准
 
 #### ECMA-262的发展历史
 
