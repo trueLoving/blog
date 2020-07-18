@@ -1,5 +1,5 @@
 ---
-title: ES6 语法总结 02
+title: ES6 语法总结 03
 categories:
  - 前端
 tags:
