@@ -1,14 +1,14 @@
 ---
 title: comment
 date: 2018-12-20 23:13:48
-keywords: 留言板
+keywords: 涂鸦
 description: 
 comments: false
-photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
+photos: https://gitee.com/trueLoving/cdn/raw/master/img/paint.png
 ---
 {% raw %}
 <div class="entry-content">
-  <div class="poem-wrap">
+  <!-- <div class="poem-wrap">
     <div class="poem-border poem-left">
     </div>
     <div class="poem-border poem-right">
@@ -19,6 +19,7 @@ photos: https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg
     叙别梦、扬州一觉。</p>
     <p id="info">
     【宋代】吴文英《夜游宫·人去西楼雁杳》</p>
-  </div>
+  </div> -->
+  <h1>Hello World</h1>
 </div>
 {% endraw %}
