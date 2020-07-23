@@ -106,6 +106,6 @@ feed:
   order_by: -date
 
 
-math:
-  engine: 'mathjax' # or 'katex'
-  mathjax:
+# math:
+#   engine: 'mathjax' # or 'katex'
+#   mathjax:
