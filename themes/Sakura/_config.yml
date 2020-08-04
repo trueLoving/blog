@@ -30,7 +30,8 @@ menus:
     # 图集: {path: /tags/图集/, fa: fa-photo }
   } }
   涂鸦: {path: /paint/,fa: fa fa-paint-brush}
-  留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
+  文档: {path: /docs/,fa: fa fa-book}
+  # 留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
   友人帐: { path: /links/, fa: fa-link faa-shake }
   # 赞赏: { path: /donate/, fa: fa-heart faa-pulse }
   # 关于: { path: /, fa: fa-leaf faa-wrench , submenus: { 
