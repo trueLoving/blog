@@ -4,7 +4,7 @@ siteName: 孤独人
 # favicon and site master avatar
 favicon: /images/favicon.ico
 avatar: /img/avatar.jpg
-url: https://www.baidu.com
+url: https://trueloving.gitee.io/blog/
 description: Walking alone in this colorful but cold-blooded World  
 cdn: https://gitee.com/trueLoving/cdn/raw/master
 pjax: 1
@@ -29,8 +29,8 @@ menus:
     歌单: {path: /music/, fa: fa-headphones },
     # 图集: {path: /tags/图集/, fa: fa-photo }
   } }
-  涂鸦: {path: /paint/,fa: fa fa-paint-brush}
-  文档: {path: /docs/,fa: fa fa-book}
+  # 涂鸦: {path: /paint/,fa: fa fa-paint-brush}
+  # 文档: {path: /docs/,fa: fa fa-book}
   # 留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
   友人帐: { path: /links/, fa: fa-link faa-shake }
   # 赞赏: { path: /donate/, fa: fa-heart faa-pulse }
