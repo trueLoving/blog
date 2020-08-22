@@ -8,7 +8,7 @@ comments: false
 photos: https://gitee.com/trueLoving/cdn/raw/master/img/docs_bg.jpg
 links:
   - group: 前端
-    desc: 一入前端深似海，从此花里胡哨整不休 V ( ^_^ ) V
+    desc: 一入前端深似海，花里胡哨整不休 V ( ^_^ ) V
     items:
     - url: https://cn.vuejs.org/
       img: https://cn.vuejs.org/images/logo.png
@@ -20,7 +20,7 @@ links:
       desc: Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式
     - url: https://router.vuejs.org/zh/
       img: https://cn.vuejs.org/images/logo.png
-      name: Vuex
+      name: Vue Router
       desc: Vue Router 是 Vue.js 官方的路由管理器
   - group: 后端
     desc: 一入后端深似海，算法容器伴一生 V ( ^_^ ) V
