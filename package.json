@@ -1,11 +1,8 @@
 {
   "name": "blog",
+  "author": "借りられない恋",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "blog website",
   "dependencies": {
     "vuepress": "^1.4.0"
   },
@@ -19,10 +16,7 @@
     "vuepress-theme-ting": "^1.4.5"
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  }
 }
