@@ -1,8 +1,13 @@
 <template>
-  <h1>Hello World</h1>
+  <h1>Test</h1>
 </template>
+
 <script>
 export default {
-
+    name:'Test'
 }
 </script>
+
+<style>
+
+</style>
